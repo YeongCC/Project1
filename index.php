@@ -147,7 +147,7 @@ if(isset($_POST['insert'])){
 
             <!-- Sign Up -->
             <div id="id02" class="modal">
-                <form class="modal-content animate" name="register" action="" method="post"  style="margin-top:0%;">
+                <form class="modal-content animate" name="register" action="" method="POST"  style="margin-top:0%;">
                     <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                     </div>
