@@ -1,3 +1,43 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "foodtiger";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+//if user click create buttom
+if(isset($_POST['insert'])){
+    $Name=$_POST['Name'];
+    $Email=$_POST['Email'];
+    $PhoneNo=$_POST['PhoneNo'];
+    $Address=$_POST['Address'];
+    $Password=$_POST['Password'];
+    $Password2=$_POST['Password2'];
+
+    $sql="insert into account values('$Name','$Email','$PhoneNo','$Address','$Password')";
+    
+    // Your validation code.
+    if ($Password != $Password2) {
+        echo "<script>alert('Your passwords do not match. Please type carefully.');</script>";
+    }
+    // Passwords match
+    if ($Password == $Password2){ 
+        $result=$conn->query($sql);
+        echo "<script>alert('Congratulations,Sign Up Successful!! Try to Login Now!!!!!');</script>";
+    }
+    
+}
+
+
+    
+?>
 <!DOCTYPE html>
 <html>
 
@@ -36,10 +76,10 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 " id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
+                        <a class="nav-link" href="aboutus.php">About Us</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Categories</a>
@@ -85,9 +125,9 @@
             </form>
             </div>
 
-            <!-- Sign Up -->
-            <div id="id02" class="modal">
-                <form class="modal-content animate" action="/action_page.php" method="post"  style="margin-top:0%;">
+             <!-- Sign Up -->
+             <div id="id02" class="modal">
+                <form class="modal-content animate" name="register" action="" method="post"  style="margin-top:0%;">
                     <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                     </div>
@@ -97,31 +137,28 @@
                         <p>Please fill in this form to create an account.</p>
                         <hr>
                         <label for="Username"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="Username" required>
+                        <input type="text" placeholder="Enter Username" name="Name" value="<?php if (isset($_GET['ID'])){echo $Name; }?>" required>
 
                         <label for="Email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" required>
+                        <input type="text" placeholder="Enter Email" name="Email" value="<?php if (isset($_GET['ID'])){echo $Email; }?>" required>
 
                         <label for="PhoneNo"><b>Mobile Number</b></label>
-                        <input type="text" placeholder="Enter Mobile Number" name="PhoneNo" required>
+                        <input type="text" placeholder="Enter Mobile Number" name="PhoneNo" value="<?php if (isset($_GET['ID'])){echo $PhoneNo; }?>" required>
 
                         <label for="Address"><b>Address</b></label>
-                        <input type="text" placeholder="Enter Address" name="Address" required>
+                        <input type="text" placeholder="Enter Address" name="Address" value="<?php if (isset($_GET['ID'])){echo $Address; }?>" required>
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" placeholder="Enter Password" name="Password" id="Password" value="<?php if (isset($_GET['ID'])){echo $Password; }?>" required>
 
                         <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        <input type="password" placeholder="Repeat Password" name="Password2" id="Password2" value="<?php if (isset($_GET['ID'])){echo $Password2; }?>" required>
 
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                        </label>
 
                         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
                         <div class="clearfix">
                             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn2">Cancel</button>
-                            <button type="submit" class="signupbtn">Submit</button>
+                            <button type="submit" class="signupbtn" name="insert">Submit</button>
                           </div>
                     </div>
                 </form>
