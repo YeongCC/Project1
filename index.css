@@ -17,6 +17,7 @@ body {
     max-width: 500px;
     padding: 1px;
   }
+
 /* Make the image fully responsive */
  .carousel-inner img {
     width: 100%;
@@ -52,6 +53,9 @@ body {
     transform: scale(1.5);
 }
 
+.card .card-image, .card-no-width .card-image {
+  max-height: 230px;
+}
 .collapsible {
   background-color: #FFBD00;
   color: white;
@@ -84,4 +88,8 @@ body {
 
 .p3{
     float:left;
+}
+
+.card{
+  max-height: 230px;
 }

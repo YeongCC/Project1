@@ -35,6 +35,28 @@ if(isset($_POST['insert'])){
     
 }
 
+if(isset($_REQUEST['login'])){
+  $con = mysqli_connect('localhost','root','','foodtiger');
+  
+  $Email = $_POST['Email'];
+  $Password = $_POST['Password'];
+  
+  $exe = mysqli_query($con,"SELECT * FROM account WHERE Email = '$Email'");
+  
+  if(mysqli_num_rows($exe) >0){
+      $data = mysqli_fetch_array($exe);
+      if(password_verify($Password,$data['Password'])){       
+          echo"<script> alert('Lognin sucess!');window.location.assign('test.php'); </script>";
+          setcookie ("Email",$_POST["Email"],time()+ 3600);
+          setcookie ("Password",$_POST["Password"],time()+ 3600);
+      }else{
+          echo "<script> alert('Invalid Password.'); </script>";
+      }
+
+  }else{
+      echo "<script> alert('Invalid Email.'); </script>";
+  }
+}
 
     
 ?>
@@ -225,7 +247,7 @@ if(isset($_POST['insert'])){
 
     <!-- Card -->
     <div class="container" ><h2>Our Foods</h2>
-        <div class="card-deck" style="margin-top:5%;">
+        <div class="card-deck" style="margin-top:5%;max-height: 500px;">
             <div class="card">
                 <div class="inner">
                     <img class="card-img-top" src="image/malay food.jpg" alt="Malay Cuisine">
