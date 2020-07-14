@@ -1,6 +1,5 @@
 <?php
 include "database/connection.php";
-
 session_start();  
 if(isset($_SESSION['Email'])){
     $Email=$_SESSION['Email'];
@@ -17,12 +16,33 @@ if(isset($_SESSION['Email'])){
       }
     }
  }
+
+require 'database/connection.php';
+require 'database/pdo.php';
+$sql = 'SELECT * FROM category';
+
+$query  = $pdoconn->prepare($sql);
+$query->execute();
+$arr_all = $query->fetchAll(PDO::FETCH_ASSOC);		
+$result=$conn->query($sql); //run SQL
+if(isset($_POST['search'])){
+    $keyword=$_POST['search'];
+}        
+$search="";
+if(isset($_POST['search'])){
+$search=" where nameFood like '%".$keyword."%'or description like '%".$keyword."%'";
+}
+if(isset($_GET['category'])){
+$cart_id=$_GET['category'];
+$search=" where cart_id='".$cart_id."'";
+}
+                   
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>FoodTiger</title>
+    <title>FoodTiger - Food</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/logo 256x256.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -31,6 +51,7 @@ if(isset($_SESSION['Email'])){
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="css/search.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -45,27 +66,9 @@ if(isset($_SESSION['Email'])){
 function logout() {
   alert("Log Out Successful!!!!!");
 }
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-// Get the modal
-var modal = document.getElementById('id02');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
 <body>
-    <header>        
+<header>        
         <!-- nav bar -->
         <nav class="navbar navbar-expand-md bg-warning navbar-dark fixed-top">
             <!-- Brand -->
@@ -173,8 +176,7 @@ window.onclick = function(event) {
                 </form>
                 </div>           
     </header>
-
-    <!-- Carousel -->
+        <!-- Carousel -->
     <div id="demo" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -212,173 +214,36 @@ window.onclick = function(event) {
         </a>
     </div>
 
-    <!-- Card -->
-    <div class="container" ><h2>Our Foods</h2>
-        <div class="card-deck" style="margin-top:5%;max-height: 500px;">
-            <div class="card">
-                <div class="inner">
-                    <img class="card-img-top" src="image/malay food.jpg" alt="Malay Cuisine">
-                </div>
-              <div class="card-body">
-                <h5 class="card-title">Malay</h5>
-                <p class="card-text">Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.</p>
-                <a href="#" class="btn btn-warning text-white">Learn More</a>
-              </div>
-            </div>
-            <div class="card">
-                <div class="inner">
-                    <img class="card-img-top" src="image/chinese food.jpg" alt="Chinese Cuisine">
-                </div>
-              <div class="card-body">
-                <h5 class="card-title">Chinese</h5>
-                <p class="card-text">Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.</p>
-                <a href="#" class="btn btn-warning text-white">Learn More</a>
-              </div>
-            </div>
-            <div class="card">
-                <div class="inner">
-                    <img class="card-img-top" src="image/western food.jpg" alt="Western Cuisine">
-                </div>
-              <div class="card-body">
-                <h5 class="card-title">Western</h5>
-                <p class="card-text">European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term "European". &nbsp;</p>
-                <a href="#" class="btn btn-warning text-white">Learn More</a>
-              </div>
-            </div>
-          </div>
+    <div class="container" style="margin-top:3%;"><h2>Food</h2>
+    <form style="margin-top:3%;" action="food.php" method="POST">
+        <input type="text" name="search" placeholder="Search..." id="search">
+    </form>
     </div>
-     
-        <!-- Carousel 2 -->
-      <div id="demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" style="margin-top:5%;">
-          <div class="carousel-item active">
-            <img src="image/food2.jpg" alt="food4" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="image/food5.jpg" alt="food5" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="image/food6.jpg" alt="food6" width="1100" height="500">
-          </div>
-        </div>
-      </div>
-
-      <!-- About Us -->
-      <div class="container" style="margin-top:3%;"><h2>About Us</h2></div>
-        <div class="container" style="text-align: left;">
-            <div class="row">
-            <div class="column-66">
-                <h1 class="large-font" style="color:#FFBD00;"><b>We are FoodTiger.</b></h1>
-                <p style="font-size:1.3em;">FoodTiger is a convenient online food ordering website. Customers can browse through the system and place order easily. "Bringing good food into your everyday. That's our mission.</p>
-                <a class="abutton" href="aboutus.php"><button class="button3">Read More</button></a>
-            </div>
-            <div class="column-33">
-                <img src="image/logo 256x256.png" width="335" height="471">
-            </div>
-            </div>
-        </div>
-
-        <!-- How It Works -->
-        <div class="container" style="margin-top:3%;margin-bottom: 3%;"><h2>Frequently Asked Questions(FAQ)</h2>
-            <button class="collapsible">What are your opening hours?</button>
-            <div class="content">
-              <p class="p3">FoodTiger is open from 10am to 11pm from Monday to Sunday.</p>
-            </div>
-            <button class="collapsible">How can I pay for my order?</button>
-            <div class="content">
-              <p class="p3">We provide Credit/Debit Card. Once the payment is comfirmed, the order will be transmitted to the system. </p>
-            </div>
-            <button class="collapsible">How can I create an account at FoodTiger?</button>
-            <div class="content">
-            <p class="p3">Click on "Sign Up" at the top of the page. Then fill out all information in the "Sign Up" section and click the "Submit" button.</p>
-            </div>
-        </div>
-
-    <!-- Footer -->
-    <footer class="page-footer font-small pt-4" style="background-color: #FFBD00;">
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-        <!-- Grid row -->
+    <div class="col-md-8 mx-auto" style="margin-top:1%;">
         <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3" >
-            <!-- Content -->
-            <h5 class="text-uppercase" style="margin-left:5%;">Contact Us</h5>
-            <h6 style="margin-left:5%;">FoodTiger</h6>
-            <p style="margin-left:5%;">PTD 64888, Jalan Selatan Utama, km 15, 81300 Skudai, Johor</p>
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none pb-3">
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="text-uppercase">Our Service</h5>
-            <ul class="list-unstyled">
-                <li>
-                <a class="a2" href="#!">Categories</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Foods</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Career</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Support</a>
-                </li>
-            </ul>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="text-uppercase">Social Media Links</h5>
-    
-            <ul class="list-unstyled">
-                <li>
-                <a class="a2" href="#!">Facebook</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Instagram</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Twitter</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Whatsapp</a>
-                </li>
-            </ul>
-    
-            </div>
-            <!-- Grid column -->
-    
+            <?php
+                $sql="select * from food".$search;
+                $result=$conn->query($sql);
+                if($result->num_rows >0){
+                    while($row = $result -> fetch_assoc()){     
+            ?>  
+            <div class="col-sm-4" style="margin-top:30px">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="inner" style="text-align:center">
+                            <a href="fooddetails.php?f_id=<?php echo $row['f_id'];; ?>"><img src="image/<?php echo $row['imageFood'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
+                        </div>
+                        <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
+                        <div class="card-heading"><?php echo $row['description'];?></div>     
+                        <div class="card-heading">RM<?php echo $row['price'];?></div>  
+                    </div>
+                </div>
+            </div>  
+            <?php
+                } 
+            }
+            ?>
         </div>
-        <!-- Grid row -->
-    
-        </div>
-        <!-- Footer Links -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="background-color:#f5b400 ;">© 2020 Copyright:
-        <a class="a2" href="index.html"> FoodTiger.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-        content.style.maxHeight = null;
-        } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        }
-    });
-    }
-</script>
-</body>
+    </div>
+    </body>
 </html>

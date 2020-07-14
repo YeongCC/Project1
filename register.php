@@ -20,11 +20,8 @@ if(isset($_POST['insert'])){
     $Address=$_POST['Address'];
     $Password=$_POST['Password'];
     $Password2=$_POST['Password2'];
-    
-    //Password Encryption
-    $password_hash = password_hash($Password, PASSWORD_DEFAULT);
 
-    $sql="insert into account values('$Name','$Email','$PhoneNo','$Address','$password_hash')";
+    $sql="insert into customer values('$Name','$Email','$PhoneNo','$Address','$Password')";
     
     // Your validation code.
     if ($Password != $Password2) {
@@ -33,7 +30,7 @@ if(isset($_POST['insert'])){
     // Passwords match
     if ($Password == $Password2){ 
         $result=$conn->query($sql);
-        echo "<script>alert('Congratulations,Sign Up Successful!!!');</script>";
+        echo "<script>alert('Congratulations,Sign Up Successful!!!');window.location.assign('login.php');</script>";
     }
     
 }
@@ -45,7 +42,7 @@ if(isset($_POST['insert'])){
 <html>
 
 <head>
-    <title>FoodTiger</title>
+    <title>FoodTiger - Sign Up</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/logo 256x256.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
@@ -53,8 +50,7 @@ if(isset($_POST['insert'])){
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="account.css" rel="stylesheet"> 
-    
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <script>
     $(document).ready(function(){
@@ -71,7 +67,7 @@ if(isset($_POST['insert'])){
     });
 
 </script>
-
+<body>
     <form name="register" action="register.php" method="POST">
     <h3 style="color: rgb(120,120,120)">Sign Up</h3>
     <label>
@@ -117,6 +113,7 @@ if(isset($_POST['insert'])){
         </div> 
     </label>
     <button type="submit" name="insert">Submit</button>
-    <div style="margin-top:30px auto;text-align:center">Have an account? <a href="">Login</a></div>
+    <div style="margin-top:30px auto;text-align:center">Have an account? <a href="login.php">Login</a></div>
     </form>
+</body>
 </html>
