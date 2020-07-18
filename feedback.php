@@ -48,27 +48,31 @@ if(isset($_SESSION['Email'])){
           include "navandfooter/nav.php";
         ?>        
     </header>
-    <div class="container" style="margin-top:5%;"><h2>Feedback</h2><br/>
+    <div class="container" style="margin-top:100px;"><h2>Feedback</h2><br/>
         <form action="database/feedbackcode.php" method="post" >
             <h5>Please help us to serve you better by taking a couple of minutes. </h5>
             <hr>
             <h5>How the Food taste?</h5>
             <div class="row">
-                <div class="col-sm-3"><input type="radio" name="feedback" value="excellent" id="excellent" required><br/><label for="excellent">excellent</label></div>
-                <div class="col-sm-3"><input type="radio" name="feedback" value="good" id="good"><br/><label for="good"> good</label></div>
-                <div class="col-sm-3"><input type="radio" name="feedback" value="neutral" id="neutral"><br/><label for="neutral">neutral</label></div>
-                <div class="col-sm-3"><input type="radio" name="feedback" value="poor" id="poor"><br/><label for="poor">poor</label></div>
+                <div class="col-sm-3"><input type="radio" name="feedback" value="excellent" id="excellent" required><br/><label for="excellent"><h6>excellent</h6></label></div>
+                <div class="col-sm-3"><input type="radio" name="feedback" value="good" id="good"><br/><label for="good"><h6>good</h6></label></div>
+                <div class="col-sm-3"><input type="radio" name="feedback" value="neutral" id="neutral"><br/><label for="neutral"><h6>neutral</h6></label></div>
+                <div class="col-sm-3"><input type="radio" name="feedback" value="poor" id="poor"><br/><label for="poor"><h6>poor</h6></label></div>
             </div>
             <br/>
             <h5>If you have specific feedback, please write to us...</h5>
             <textarea placeholder="Additional comments" class="w3l_summary" name="suggestions" rows="4" cols="50"></textarea><br/><br/>
-            <input type="submit" name="feedback" class="btn btn-warning text-uppercase text-white" value="submit" >
             <input type="Name" placeholder="Your Name (optional)" name="Name"  style="display: none;"/>
             <input type="Email" placeholder="Your Email (optional)" name="Email" style="display: none;"/>
             <input type="PhoneNo" placeholder="Your Number (optional)" name="PhoneNo"  style="display: none;"/><br>
+            <input type="submit" value="submit" class="btn btn-warning text-uppercase text-white" >
         </form>
     </div>
-
+    <footer style="margin-top:10%;">
+        <?php 
+          include "navandfooter/footer.php";
+        ?>
+    </footer>
 
 </body>
 </html>

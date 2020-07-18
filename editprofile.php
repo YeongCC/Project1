@@ -18,6 +18,7 @@ if(isset($_SESSION['Email'])){
     }
  }
 ?>  
+<!DOCTYPE html>
 <html>  
  <head>  
  <title>FoodTiger - Edit Profile</title>

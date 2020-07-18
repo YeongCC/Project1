@@ -17,7 +17,8 @@ if(isset($_SESSION['Email'])){
       }
     }
  }
-?>  
+?>
+<!DOCTYPE html>  
 <html>  
  <head>  
  <title>FoodTiger - User Profile</title>
