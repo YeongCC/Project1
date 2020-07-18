@@ -41,10 +41,11 @@ if(isset($_SESSION['Email'])){
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/nav-bar.css">
-    <link rel="stylesheet" href="css/aboutus.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/aboutus.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Popper JS -->
@@ -53,53 +54,13 @@ if(isset($_SESSION['Email'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
 </head>
-<script>
-function logout() {
-  alert("Log Out Successful!!!!!");
-}
-</script>
 <body>
-    <header>        
-        <!-- nav bar -->
-        <nav class="navbar navbar-expand-md bg-warning navbar-dark fixed-top">
-            <!-- Brand -->
-            <a class="navbar-brand" href="index.html"><img src="image/logo 256x256.png" alt="logo" width="30" height="30" style="margin-left:30%;"></a>
-          
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar links -->
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 " id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="aboutus.php">About Us</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="category.php">Categories</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="food.php">Foods</a>
-                    </li>
-                    <?php
-                    if (isset($_SESSION['Name'])) {
-                      echo '<li class="nav-item active"><a href="userprofile.php" class="nav-link">Hi, '.$_SESSION['Name'].'</a></li>
-                      <li class="nav-item active"><a class="nav-link" href="lognout.php" style="width:auto;" onclick="logout()">Logout</a></li>
-                     </li>';
-                     } else {
-                       echo '<li class="nav-item active"><a class="nav-link" href="login.php" style="width:auto;">Login</a></li>
-                       <li class="nav-item active"><a class="nav-link" href="#" style="width:auto;">Sign Up</a></li>
-                     </li>';
-                     }
-                    ?>
-                </ul>
-            </div>
-          </nav>
+        <?php 
+          include "navandfooter/nav.php";
+        ?>
     </header>
     <body>
+    <div class="in1">
         <!-- Carousel -->
     <div id="demo" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
@@ -183,75 +144,11 @@ function logout() {
               </div>
             </div>
           </div>
-
-          <!-- Footer -->
-    <footer class="page-footer font-small pt-4" style="background-color: #FFBD00;">
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-        <!-- Grid row -->
-        <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3" >
-            <!-- Content -->
-            <h5 class="text-uppercase" style="margin-left:5%;">Contact Us</h5>
-            <h6 style="margin-left:5%;">FoodTiger</h6>
-            <p style="margin-left:5%;">PTD 64888, Jalan Selatan Utama, km 15, 81300 Skudai, Johor</p>
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none pb-3">
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="text-uppercase">Our Service</h5>
-            <ul class="list-unstyled">
-                <li>
-                <a class="a2" href="#!">Categories</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Foods</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Career</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Support</a>
-                </li>
-            </ul>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="text-uppercase">Social Media Links</h5>
-    
-            <ul class="list-unstyled">
-                <li>
-                <a class="a2" href="#!">Facebook</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Instagram</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Twitter</a>
-                </li>
-                <li>
-                <a class="a2" href="#!">Whatsapp</a>
-                </li>
-            </ul>
-    
-            </div>
-            <!-- Grid column -->
-    
-        </div>
-        <!-- Grid row -->
-    
-        </div>
-        <!-- Footer Links -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="background-color:#f5b400 ;">© 2020 Copyright:
-        <a class="a2" href="index.html"> FoodTiger.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+          </div>
+          <footer>
+            <?php 
+              include "navandfooter/footer.php";
+            ?>
+          </footer>
     </body>
     </html>

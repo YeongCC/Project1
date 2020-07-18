@@ -1,7 +1,7 @@
 .row:after {
     content: "";
     display: table;
-    clear: both
+    clear: both;
   }
   
   .column-66 {
@@ -47,4 +47,3 @@
       margin: auto;
     }
   }
-

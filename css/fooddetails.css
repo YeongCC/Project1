@@ -1,6 +1,6 @@
 .gallery-wrap .img-big-wrap img {
     height: 450px;
-    width: 1200px;
+    width: auto;
     display: inline-block;
 }
 

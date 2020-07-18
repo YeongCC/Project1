@@ -20,7 +20,7 @@ if(isset($_SESSION['Email'])){
 ?>  
 <html>  
  <head>  
- <title>FoodTiger - User Profile</title>
+ <title>FoodTiger - Edit Profile</title>
     <link rel="shortcut icon" type="image/x-icon" href="image/logo 256x256.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -49,28 +49,25 @@ if(isset($_SESSION['Email'])){
     </div>
 
     <div class="container">
-    <h2>Profile</h2><hr>
+    <h2>Edit Profile</h2><hr>
       <label for="Name"><b>Username</b></label>
-      <input type="text" value="<?php echo $_SESSION['Name']; ?>" readonly>
+      <input type="text" value="<?php echo $_SESSION['Name']; ?>">
       <label for="Email"><b>Email</b></label>
-      <input type="text" value="<?php echo $_SESSION['Email']; ?>" readonly>
+      <input type="text" value="<?php echo $_SESSION['Email']; ?>">
       <label for="PhoneNo"><b>Phone Number</b></label>
-      <input type="text" value="<?php echo $_SESSION['PhoneNo']; ?>" readonly>
+      <input type="text" value="<?php echo $_SESSION['PhoneNo']; ?>">
       <label for="Address"><b>Address</b></label>
-      <input type="text" value="<?php echo $_SESSION['Address']; ?>" readonly> 
-      <p><a href="editprofile.php">Edit Profile</a></p> 
-      <p><a href="#">Blog</a></p>
-      <p><a href="feedback.php">Feedback</a></p>
-      <p><a href="#">Payment History</a></p>
+      <input type="text" value="<?php echo $_SESSION['Address']; ?>"> 
+      <input type="submit" name="update" class="btn btn-warning text-uppercase text-white" value="Update" ><br/><br/>
+      <label for="CPassword"><b>Current Password</b></label>
+      <input type="password" value=""> 
+      <label for="NPassword"><b>New Password</b></label>
+      <input type="password" value=""> 
+      <label for="CNPassword"><b>Comfirm Password</b></label>
+      <input type="password" value=""> 
+      <input type="submit" name="update2" class="btn btn-warning text-uppercase text-white" value="Update" >
     </div>
-    <footer>
+    <footer style="margin-top:5%;">
         <?php 
           include "navandfooter/footer.php";
         ?>
-    </footer>
- </body>
-                  
-  
- 
-</html>
- 
