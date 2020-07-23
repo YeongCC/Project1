@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small pt-4" style="background-color: #FFBD00;">
+<footer class="page-footer font-small pt-4" style="background-image: linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% );">
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
         <!-- Grid row -->
@@ -62,7 +62,7 @@
         <!-- Footer Links -->
     
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="background-color:#f5b400 ;">© 2020 Copyright:
+        <div class="footer-copyright text-center py-3" style="background-image: linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% );">© 2020 Copyright:
         <a class="a2" href="index.php"> FoodTiger.com</a>
         </div>
         <!-- Copyright -->

@@ -49,14 +49,12 @@ $search=" where cart_id='".$cart_id."'";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/aboutus.css">
-
     
 </head>
 <body>
 <header>        
         <?php 
-          include "navandfooter/nav.php";
+          require "navandfooter/nav.php";
         ?>
     </header>
     <div class="in1">
@@ -103,7 +101,7 @@ $search=" where cart_id='".$cart_id."'";
         <input type="text" name="search" placeholder="Search..." id="search">
     </form>
     </div>
-    <div class="col-md-8 mx-auto" style="margin-top:1%;">
+    <div class="col-md-8 mx-auto" style="margin-top:1%;margin-bottom:3%;">
         <div class="row">
             <?php
                 $sql="select * from food".$search;
@@ -117,6 +115,7 @@ $search=" where cart_id='".$cart_id."'";
                         <div class="inner" style="text-align:center">
                             <a href="fooddetails.php?f_id=<?php echo $row['f_id'];; ?>"><img src="image/<?php echo $row['imageFood'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
                         </div>
+                        <hr>
                         <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
                         <div class="card-heading"><?php echo $row['description'];?></div>     
                         <div class="card-heading">RM<?php echo $row['price'];?></div>  
@@ -132,7 +131,7 @@ $search=" where cart_id='".$cart_id."'";
     </div>
     <footer style="margin-top:5%;">
         <?php 
-          include "navandfooter/footer.php";
+          require "navandfooter/footer.php";
         ?>
     </footer>
     </body>

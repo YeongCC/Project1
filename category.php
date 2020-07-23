@@ -18,7 +18,6 @@ if(isset($_SESSION['Email'])){
     }
  }
 
-require 'database/connection.php';
 $sql = 'SELECT * FROM category';
 if(isset($_GET['page'])){
      $page = $_GET['page'];
@@ -38,12 +37,11 @@ else{
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/aboutus.css">
 </head>
 <body>
 <header>        
         <?php 
-          include "navandfooter/nav.php";
+          require "navandfooter/nav.php";
         ?>           
 </header>
 <body>
@@ -98,21 +96,20 @@ else{
             }        
             $search="";
             if(isset($_POST['search'])){
-                $search=" where name like '%".$keyword."%'or pendek like '%".$keyword."%'or panjang like '%".$keyword."%'";
+                $search=" where name like '%".$keyword."%'or description like '%".$keyword."%'";
                 }
             if(isset($_GET['category'])){
               $cart_id=$_GET['category'];
               $search=" where cart_id='".$cart_id."'";
             }
-            $sql="select * from category";
+            $sql="select * from category".$search;
             $result=$conn->query($sql);
                       
             if($result->num_rows >0){
               while($row = mysqli_fetch_assoc($result)){     
                 $name=$row['name'];
                 $image=$row['image'];
-                $panjang=$row['panjang'];
-                $pendek=$row['pendek'];
+                $description=$row['description'];
                 $c_id=$row['c_id'];//for view detail
 					?> 
           <div class="col-sm-4" style="margin-top:30px">
@@ -122,8 +119,7 @@ else{
                   <a href="food.php?category=<?php echo $row['c_id'];?>"><img src="image/<?php echo $row['image'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
                 </div>
                 <h5 class="card-title"><?php echo $row['name'];?></h5>
-                <div class="card-heading"><?php echo $row['panjang'];?></div>     
-                <div class="card-heading"><?php echo $row['pendek'];?></div>  
+                <div class="card-heading"><?php echo $row['description'];?></div>
                 </div>
               </div>
             </div>     
@@ -136,7 +132,7 @@ else{
     </div>
     <footer>
         <?php 
-          include "navandfooter/footer.php";
+          require "navandfooter/footer.php";
         ?>
     </footer>
     

@@ -35,7 +35,7 @@ if(isset($_SESSION['Email'])){
 <body>
     <header>        
         <?php 
-          include "navandfooter/nav.php";
+          require "navandfooter/nav.php";
         ?>        
     </header>
     <div class="container" style="margin-top:100px;"><h2>Feedback</h2><br/>
@@ -60,7 +60,7 @@ if(isset($_SESSION['Email'])){
     </div>
     <footer style="margin-top:10%;">
         <?php 
-          include "navandfooter/footer.php";
+          require "navandfooter/footer.php";
         ?>
     </footer>
 

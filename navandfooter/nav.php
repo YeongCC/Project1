@@ -12,9 +12,9 @@
 </head>
 <header>        
         <!-- nav bar -->
-        <nav class="navbar navbar-expand-md bg-warning navbar-dark fixed-top">
-            <!-- Brand -->
-            <a class="navbar-brand" href="index.php"><img src="image/logo 256x256.png" alt="logo" width="30" height="30" style="margin-left:30%;"></a>
+        <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-image: linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% );">
+            <!-- Image -->
+            <a class="navbar-brand" href="index.php"><img src="image/logo 256x256.png" alt="logo" width="30" height="30" style="margin-left:30%; display: block;max-width: 100%;"></a>
           
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -118,9 +118,6 @@
                 </div>           
     </header>
     <script>
-    function logout() {
-    alert("Log Out Successful!!!!!");
-    }
     // Get the modal
     var modal = document.getElementById('id01');
 

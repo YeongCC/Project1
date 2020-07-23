@@ -20,7 +20,7 @@ include "database/connection.php";
                 if($result->num_rows >0){
                     while($row = $result -> fetch_assoc()){     
             ?>  
-	<figure class="card card-product">
+	<figure class="card card-product" style="float:left;">
         <div class="inner" style="text-align:center">
             <a href="fooddetails.php?f_id=<?php echo $row['f_id']; ?>"><img src="image/<?php echo $row['imageFood'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
         </div>

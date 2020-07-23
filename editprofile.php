@@ -1,5 +1,6 @@
 <?php  
 include "database/connection.php";
+include "database/updatecode.php";
 
 session_start();  
 if(isset($_SESSION['Email'])){
@@ -28,11 +29,12 @@ if(isset($_SESSION['Email'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/profile.css">
+    <script src="js/confirmUpdate.js"></script>
  </head>  
  <body>  
  <header>        
         <?php 
-          include "navandfooter/nav.php";
+          require "navandfooter/nav.php";
         ?>
     </header>
     <div class="imgcontainer">
@@ -40,25 +42,21 @@ if(isset($_SESSION['Email'])){
     </div>
 
     <div class="container">
+    <form name="" action="database/updatecode.php" method="POST">
     <h2>Edit Profile</h2><hr>
       <label for="Name"><b>Username</b></label>
-      <input type="text" value="<?php echo $_SESSION['Name']; ?>">
+      <input type="text" name="Name" id="Name" value="<?php echo $_SESSION['Name']; ?>" >
       <label for="Email"><b>Email</b></label>
-      <input type="text" value="<?php echo $_SESSION['Email']; ?>">
+      <input type="text" name="Email" id="Email" value="<?php echo $_SESSION['Email']; ?>">
       <label for="PhoneNo"><b>Phone Number</b></label>
-      <input type="text" value="<?php echo $_SESSION['PhoneNo']; ?>">
+      <input type="text" name="PhoneNo" id="PhoneNo" value="<?php echo $_SESSION['PhoneNo']; ?>">
       <label for="Address"><b>Address</b></label>
-      <input type="text" value="<?php echo $_SESSION['Address']; ?>"> 
-      <input type="submit" name="update" class="btn btn-warning text-uppercase text-white" value="Update" ><br/><br/>
-      <label for="CPassword"><b>Current Password</b></label>
-      <input type="password" value=""> 
-      <label for="NPassword"><b>New Password</b></label>
-      <input type="password" value=""> 
-      <label for="CNPassword"><b>Comfirm Password</b></label>
-      <input type="password" value=""> 
-      <input type="submit" name="update2" class="btn btn-warning text-uppercase text-white" value="Update" >
+      <input type="text" name="Address" id="Address" value="<?php echo $_SESSION['Address']; ?>">  
+      <label for="Password"><b>Password</b></label>
+      <input type="password" value="" name="Password" id="Password"> 
+      <input type="submit" name="update" class="btn btn-warning text-uppercase text-white" onclick="return ConfirmUpdate();" value="Update" >
     </div>
     <footer style="margin-top:5%;">
         <?php 
-          include "navandfooter/footer.php";
+          require "navandfooter/footer.php";
         ?>

@@ -113,7 +113,8 @@ if(isset($_GET['f_id'])){
                         <input type="submit" name="add" class="btn btn-lg btn-warning text-uppercase text-white" value="Add to Cart" >
                     <?php
                     } else {?>
-                        <a href="#" class="btn btn-lg btn-warning text-uppercase text-white disabled" name="add" value="Add to Cart"> Add to Cart</a>
+                        <a href="#" class="btn btn-lg btn-warning text-uppercase text-white disabled" name="add" value="Add to Cart">Add to Cart</a>
+                        <p>Please Login First.</p>
                     <?php 
                     } ?>   
                 </article> <!-- card-body.// -->

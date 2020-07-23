@@ -16,6 +16,8 @@ if(isset($_SESSION['Email'])){
             
       }
     }
+ } else {
+   
  }
 ?>
 <!DOCTYPE html>  
@@ -32,7 +34,7 @@ if(isset($_SESSION['Email'])){
  <body>  
  <header>        
         <?php 
-          include "navandfooter/nav.php";
+          require "navandfooter/nav.php";
         ?>
     </header>
     <div class="imgcontainer">
@@ -52,11 +54,11 @@ if(isset($_SESSION['Email'])){
       <p><a href="editprofile.php">Edit Profile</a></p> 
       <p><a href="#">Blog</a></p>
       <p><a href="feedback.php">Feedback</a></p>
-      <p><a href="#">Payment History</a></p>
+      <p><a href="paymenthistory.php">Payment History</a></p>
     </div>
     <footer>
         <?php 
-          include "navandfooter/footer.php";
+          require "navandfooter/footer.php";
         ?>
     </footer>
  </body>
