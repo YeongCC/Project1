@@ -19,7 +19,7 @@ if(isset($_SESSION['Email'])){
 
 if(isset($_GET['f_id'])){
     $f_id=$_GET['f_id'];
-    $sql="select * from food left join category on food.cart_id=category.c_id where food.f_id='".$f_id."'";
+    $sql="select * from food where food.f_id='".$f_id."'";
     $result=$conn->query($sql);
     if($result->num_rows >0){
         while($row = $result -> fetch_assoc()){     
@@ -76,7 +76,7 @@ if(isset($_GET['f_id'])){
                 <aside class="col-sm-6 border-right">
                     <article class="gallery-wrap"> 
                         <div class="img-big-wrap">
-                            <img src="image/<?php echo $imagefood;?>" alt="<?php echo $nameFood;?>" class="img-fluid">
+                            <img src="image/<?php echo $imagefood;?>" alt="<?php echo $nameFood;?>" class="img-fluid" style="width:100%;height:70%;margin-top:100px;text-align:center;">
                         </div> <!-- slider-product.// -->
                     </article> <!-- gallery-wrap .end// -->
                 </aside>

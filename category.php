@@ -112,13 +112,14 @@ else{
                 $description=$row['description'];
                 $c_id=$row['c_id'];//for view detail
 					?> 
-          <div class="col-sm-4" style="margin-top:30px">
+          <div class="col-sm-4" style="margin-top:20px">
             <div class="card h-100">
               <div class="card-body">
-                <div class="inner" >
+                <div class="inner" style="text-align:center">
                   <a href="food.php?category=<?php echo $row['c_id'];?>"><img src="image/<?php echo $row['image'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
                 </div>
                 <h5 class="card-title"><?php echo $row['name'];?></h5>
+                <hr>
                 <div class="card-heading"><?php echo $row['description'];?></div>
                 </div>
               </div>
@@ -128,6 +129,20 @@ else{
             }
             ?>
         </div>
+        <?php
+        $result = $conn->query("SELECT * FROM category where category_exixts='exixts'");
+        $count = $result->num_rows;      
+        $a = $count / 9;
+        $a = ceil($a);
+        ?>
+        <ul class="pagination pagination-lg"> 
+          <?php
+          for ($i = 1; $i <= $a; $i++) {?>
+            <li class="page-item"><a class="page-link" href="category.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li> 
+          <?php
+          }
+          ?>
+        </ul>
     </div>
     </div>
     <footer>

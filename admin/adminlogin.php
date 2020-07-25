@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
       $_SESSION['ad_id'] = $cus_id;
       $_SESSION['Name'] = $Name;
       $_SESSION['Email'] = $Email;
-      header('location: home.php');
+      header('location: adminhome.php');
     }
     else {
       echo "<script>alert('invalid username/password !');

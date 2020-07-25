@@ -19,7 +19,7 @@ if(isset($_SESSION['Email'])){
 
 require 'database/connection.php';
 require 'database/pdo.php';
-$sql = 'SELECT * FROM category';
+$sql = 'SELECT * FROM food';
 
 $query  = $pdoconn->prepare($sql);
 $query->execute();
@@ -115,10 +115,10 @@ $search=" where cart_id='".$cart_id."'";
                         <div class="inner" style="text-align:center">
                             <a href="fooddetails.php?f_id=<?php echo $row['f_id'];; ?>"><img src="image/<?php echo $row['imageFood'];?>"  class="img-fluid"  style="width:300px; height:300px;object-fit: contain;"></a>
                         </div>
-                        <hr>
                         <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
-                        <div class="card-heading"><?php echo $row['description'];?></div>     
-                        <div class="card-heading">RM<?php echo $row['price'];?></div>  
+                        <hr>
+                        <div class="card-heading"><?php echo $row['description'];?></div>
+                        <div class="card-heading"><h5>RM<?php echo $row['price'];?></h5></div>  
                     </div>
                 </div>
             </div>  

@@ -38,7 +38,7 @@
                     <?php
                     if (isset($_SESSION['Name'])) { ?>
                        <li class="nav-item active"><a href="userprofile.php" href="#" class="nav-link">Hi, <?php echo $_SESSION['Name']?></a></li>
-                      <li class="nav-item active"><a class="nav-link" href="lognout.php" style="width:auto;" onclick="return confirm('Are you sure?')">Logout</a></li>
+                      <li class="nav-item active"><a class="nav-link" href="database/lognoutcode.php" style="width:auto;" onclick="return confirm('Are you sure?')">Logout</a></li>
                       <li class="nav-item active">
                       <a class="nav-link" href="cart.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
                       </li>
