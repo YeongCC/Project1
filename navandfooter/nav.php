@@ -72,7 +72,7 @@
 
                 <div class="container1" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">No Account??<a href="#" >Register</a></span>
+                <span class="psw">No Account??<a href="#" onclick="document.getElementById('id02').style.display='block'">Register</a></span>
                 </div>
             </form>
             </div>

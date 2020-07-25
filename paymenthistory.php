@@ -104,7 +104,7 @@ $Email = $_SESSION['Email'];
                     $run_del_query = mysqli_query($conn, $del_query) or die (mysqli_error($conn));
                     if (mysqli_affected_rows($conn) > 0) {
                         echo "<script>alert('Order history deleted successfully');
-                        window.location.href='orderhistory.php';</script>";
+                        window.location.href='paymenthistory.php';</script>";
                     }
                     else {
                     echo "<script>alert('error occured.try again!');</script>";   
