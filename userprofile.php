@@ -44,37 +44,37 @@ if (isset($_SESSION['userEmail'])) {
     <div style="text-align:right;">
     <a class="btn btn-warning" href="editprofile.php" style="text-align:right;">Edit <i class='fas fa-edit'></i></a>
     </div>
-    <div class="container">
+    <div class="container" style="text-align:center;">
       <div class="row">
         <div class="col-sm-3">
-        <h3 style="color:brown;">Username: </h3>
+        <h4 style="color:brown;">Username: </h4>
         </div>
         <div class="col-sm-9">
-        <h3 style="font-weight: lighter;"><?php echo $Name ?></h3>
+        <h4 style="font-weight: lighter;margin-right:40%"><?php echo $Name ?></h4>
         </div>   
       </div><br/>
       <div class="row">
         <div class="col-sm-3">
-        <h3 style="color:brown;">Email:</h3>
+        <h4 style="color:brown;margin-left:60px">Email:</h4>
         </div>
         <div class="col-sm-9">
-        <h3 style="font-weight: lighter;"><?php echo $Email ?></h3>
+        <h4 style="font-weight: lighter;margin-right:22%"><?php echo $Email ?></h4>
         </div>   
       </div><br/>
       <div class="row">
         <div class="col-sm-3">
-        <h3 style="color:brown;">Phone Number:</h3>
+        <h4 style="color:brown;margin-left:10px">Phone Number:</h4>
         </div>
         <div class="col-sm-9">
-        <h3 style="font-weight: lighter;"><?php echo $PhoneNo ?></h3>
+        <h4 style="font-weight: lighter;margin-right:40%"><?php echo $PhoneNo ?></h4>
         </div>   
       </div><br/>
       <div class="row">
         <div class="col-sm-3">
-        <h3 style="color:brown;">Address:</h3>
+        <h4 style="color:brown;margin-left:20px">Address:</h4>
         </div>
         <div class="col-sm-9">
-        <h3 style="font-weight: lighter;"><?php echo $Address ?></h3>
+        <h4 style="font-weight: lighter;margin-right:37%"><?php echo $Address ?></h4>
         </div>   
       </div>
     </div>  

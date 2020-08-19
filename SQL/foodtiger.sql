@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2020 at 11:56 AM
+-- Generation Time: Aug 13, 2020 at 12:14 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -106,8 +106,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`cus_id`, `Name`, `Email`, `PhoneNo`, `Address`, `Password`) VALUES
 (1, 'HandsomeC', 'yeong4470@gmail.com', '0147464470', '27,jalan indah', '$2y$10$gevtf749FJBJMhkydZPDOuLdjxLF1O5xiNF6R9uQga7lWRR13Fyq.'),
-(2, 'qefewf', 'grwg@rfver.com', '0147464470', '27edweewfef', '$2y$10$Nzh2jASFeCUJobmfYgweX.kaa1jneALLvHX6AVSeWwSWipmH1H3im'),
-(3, 'egewge', 'admin@admin.com', '014-7464470', '27edwe', '$2y$10$s94xO95WlK6wBRDEjwSmduF0JzXtBEBtmsYydMt8GNvLvdONgWnfS');
+(2, 'qefewf', 'grwg@rfver.com', '0147464470', '27edweewfef', '$2y$10$Nzh2jASFeCUJobmfYgweX.kaa1jneALLvHX6AVSeWwSWipmH1H3im');
 
 -- --------------------------------------------------------
 
@@ -317,7 +316,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cus_order`
@@ -353,7 +352,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
