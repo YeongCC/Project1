@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Feedback</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;Feedback List</h1> 
     <h1 style=" text-align: right;"><a href="view.php"  >Back</a></h1> 
         <div class="col-md-10 col-md-offset-1">
 
@@ -60,10 +60,10 @@ $result = mysqli_query($conn, $sql);
                 </div>
               </div>
               <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
+                <table class="table  table-bordered table-list">
                   <thead>
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
+          
                         <th>Email</th>
                         <th>Name</th>
                         <th>Phone</th>
@@ -76,9 +76,7 @@ $result = mysqli_query($conn, $sql);
                           <?php 
                           while($row = mysqli_fetch_array($result)) {       
                           ?>
-                            <td align="center">
-                              <a class="btn btn-danger" href="editfeedback.php?id=<?php echo $row['id']; ?>"><span class="new badge" data-badge-caption="" onclick="return ConfirmDelete();"><em class="fa fa-trash"></em></span></a>
-                            </td>
+                          
                             <td><?php echo $row['Email'];?></td>
                             <td><?php echo $row['Name'];?></td>
                             <td><?php echo $row['phone'];?></td>

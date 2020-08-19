@@ -18,13 +18,13 @@
 
     <form >
    
- 
-    <a href="viewblog.php" class="btn  button" class=".lol" >Blog</a>
-    <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
     <a href="viewCustomerAcc.php" class="btn  button" class=".lol" >Customer Account</a>
-    <a href="viewPayhistory.php" class="btn  button" class=".lol" >view payment history</a>
-    <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >view order history</a>
-    <a href="test.php" class="btn  button" class=".lol" >Back</a>
-    <p><a href="../index/adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>
+    <a href="viewPayhistory.php" class="btn  button" class=".lol" >Payment List</a>
+    <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >Order List</a>
+    <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
+    
+ 
+    <a href="adminhome.php" class="btn  button" class=".lol" >Back</a>
+    <p><a href="adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>
     </form>
 </html>

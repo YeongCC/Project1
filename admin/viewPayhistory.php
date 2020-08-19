@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Card Payment History</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;Payment List</h1> 
     <h1 style=" text-align: right;"><a href="view.php"  >Back</a></h1> 
         <div class="col-md-10 col-md-offset-1">
 
@@ -60,18 +60,19 @@ $result = mysqli_query($conn, $sql);
                 </div>
               </div>
               <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
+                <table class="table  table-bordered table-list">
                   <thead>
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
+                        <th>Num</th>
                         <th>Order Number</th>
                         <th>Email</th>
                         <th>Name</th>
                         <th>Phone Number</th>
                         <th>Address</th>
-                        <th>Price</th>    
-                        <th>Card</th>     
-                        <th>Time & Date</th>         
+                        <th>Price</th>      
+                        <th>Receive</th>   
+                        <th>Status</th>
+                        <th>Time & Date</th>      
                     </tr> 
                   </thead>
                   <tbody>
@@ -79,16 +80,15 @@ $result = mysqli_query($conn, $sql);
                           <?php 
                    while($row = mysqli_fetch_array($result)) {   
                           ?>
-                            <td align="center">
-                              <a class="btn btn-danger" href="editPay.php?order_id=<?php echo $row['order_id']; ?>"><span class="new badge" data-badge-caption="" onclick="return ConfirmDelete();"><em class="fa fa-trash"></em></span></a>
-                            </td>
+                            <td><?php echo $row['id'];?></td>
                             <td><?php echo $row['order_id'];?></td>
-                            <td><?php echo $row['Email'];?></td>
+                            <td><?php echo $row['email'];?></td>
                             <td><?php echo $row['Name'];?></td>
                             <td><?php echo $row['PhoneNo'];?></td>
                             <td><?php echo $row['Address'];?></td>
                             <td><?php echo $row['price'];?></td>
-                            <td><?php echo $row['Card'];?>-<?php echo $row['Month'];?>-<?php echo $row['Year'];?>-<?php echo $row['CCV'];?></td>
+                            <td><?php echo $row['receive'];?></td>
+                            <td><?php echo $row['status'];?></td>
                             <td><?php echo $row['time_date'];?></td>
                         </tr>
                           <?php

@@ -23,7 +23,7 @@ session_start();
 require('../database/connection.php');
 require('../database/pdo.php');
 require('../database/mysql.php');
-$sql = 'SELECT * FROM orders';
+$sql = 'SELECT orders.cust_id, orders.foodname,orders.price,orders.quantity, payment.order_id FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.custorder_id LEFT JOIN payment ON cus_order.order_id = payment.order_id';
 $query  = $pdoconn->prepare($sql);
 $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Orders History</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;Order List</h1> 
     <h1 style=" text-align: right;"><a href="view.php"  >Back</a></h1> 
         <div class="col-md-10 col-md-offset-1">
 
@@ -60,10 +60,10 @@ $result = mysqli_query($conn, $sql);
                 </div>
               </div>
               <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
+                <table class="table table-bordered">
                   <thead>
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
+                        <th>Num</th>
                         <th>Order Number</th>
                         <th>Food</th>
                         <th>Price</th>
@@ -73,14 +73,14 @@ $result = mysqli_query($conn, $sql);
                     </tr> 
                   </thead>
                   <tbody>
+                    
                           <tr>
                           <?php 
+                          
                           while($row = mysqli_fetch_array($result)) {      
                           ?>
-                            <td align="center">
-                              <a class="btn btn-danger" href="editorder.php?order_id=<?php echo $row['order_id']; ?>"><span class="new badge" data-badge-caption="" onclick="return ConfirmDelete();"><em class="fa fa-trash"></em></span></a>
-                            </td>
-                            <td><?php echo $row['order_id'];?></td>
+                           <td ><?php echo $row['order_id'];?></td>
+                            <td ><?php echo $row['cust_id'];?></td>
                             <td><?php echo $row['foodname'];?></td>
                             <td><?php echo $row['price'];?></td>
                             <td><?php echo $row['quantity'];?></td>

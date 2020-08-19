@@ -11,7 +11,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="../../css/food.css" rel="stylesheet"> 
-    <script src="../js/delete.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -45,7 +44,7 @@ $result = mysqli_query($conn, $sql);
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Feedback</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;Customer Account</h1> 
     <h1 style=" text-align: right;"><a href="view.php"  >Back</a></h1> 
         <div class="col-md-10 col-md-offset-1">
 
@@ -60,7 +59,7 @@ $result = mysqli_query($conn, $sql);
                 </div>
               </div>
               <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
+                <table class="table  table-bordered table-list">
                   <thead>
                     <tr>
                         <th><em class="fa fa-cog"></em></th>
@@ -76,7 +75,7 @@ $result = mysqli_query($conn, $sql);
                           while($row = mysqli_fetch_array($result)) {     
                           ?>
                             <td align="center">
-                              <a class="btn btn-danger" href="editAcc.php?Email=<?php echo $row['Email']; ?>"><span class="new badge" data-badge-caption="" onclick="return ConfirmDelete();"><em class="fa fa-trash"></em></span></a>
+                              <a class="btn btn-danger" href="editAcc.php?Email=<?php echo $row['Email']; ?>" onclick="return confirm('Sure Want Delete?')"><span class="new badge" ><em class="fa fa-trash"></em></span></a>
                             </td>
                             <td><?php echo $row['Email'];?></td>
                             <td><?php echo $row['Name'];?></td>
