@@ -19,12 +19,10 @@
     <form >
    
  
-    <a href="viewblog.php" class="btn  button" class=".lol" >Blog</a>
-    <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
-    <a href="viewCustomerAcc.php" class="btn  button" class=".lol" >Customer Account</a>
-    <a href="viewPayhistory.php" class="btn  button" class=".lol" >view payment history</a>
-    <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >view order history</a>
-    <a href="test.php" class="btn  button" class=".lol" >Back</a>
+    <a href="view.php" class="btn  button" class=".lol" >Customer activities</a>
+    <a href="../food/admin/admincontrolside.php" class="btn  button" class=".lol" >Food Management</a>
+    <a href="viewadmin.php" class="btn  button" class=".lol" >Admin Management</a>
     <p><a href="../index/adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>
+
     </form>
 </html>

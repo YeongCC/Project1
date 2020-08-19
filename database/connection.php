@@ -1,15 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "foodtiger";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password,$database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+	$dbHost = "localhost";
+	$dbUsername = "root";
+	$dbPassword = "";
+	$dbDatabase = "foodtiger";
+	$conn=mysqli_connect($dbHost,$dbUsername,$dbPassword,$dbDatabase);
 ?>

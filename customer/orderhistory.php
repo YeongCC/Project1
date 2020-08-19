@@ -22,30 +22,13 @@
 session_start();
 require('../database/connection.php');
 require('../database/pdo.php');
-require('../database/mysql.php');
-$sql = 'SELECT * FROM admin';
-$query  = $pdoconn->prepare($sql);
-$query->execute();
-$arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
-$results_per_page = 6;
-$sql='SELECT * FROM admin';
-$result = mysqli_query($conn, $sql);
-$number_of_results = mysqli_num_rows($result);
-$number_of_pages = ceil($number_of_results/$results_per_page);
-if (!isset($_GET['page'])) {
-  $page = 1;
-} else {
-  $page = $_GET['page'];
-}
-$this_page_first_result = ($page-1)*$results_per_page;
-$sql='SELECT * FROM admin LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
-$result = mysqli_query($conn, $sql);
+$Email = $_SESSION['Email'];
 ?>
 						
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Feedback</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Card Payment History</h1> 
     <h1 style=" text-align: right;"><a href="test.php"  >Back</a></h1> 
         <div class="col-md-10 col-md-offset-1">
 
@@ -64,41 +47,73 @@ $result = mysqli_query($conn, $sql);
                   <thead>
                     <tr>
                         <th><em class="fa fa-cog"></em></th>
-                        <th>Email</th>
-                        <th>Name</th>          
+                        <th>Order Number</th>
+                        <th>Food name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
                     </tr> 
                   </thead>
                   <tbody>
-                          <tr>
-                          <?php 
-                          while($row = mysqli_fetch_array($result)) {         
-                          ?>
-                            <td align="center">
-                              <a class="btn btn-danger" href="editAcc.php?Email=<?php echo $row['Email']; ?>"><span class="new badge" data-badge-caption="" onclick="return ConfirmDelete();"><em class="fa fa-trash"></em></span></a>
-                            </td>
-                            <td><?php echo $row['Email'];?></td>
-                            <td><?php echo $row['Name'];?></td>
-                          </tr>
-                          <?php
-                            }
-                          ?>
-                        </tbody>
+                  <?php
+                 $currentuser = $_SESSION['Email'];
+
+$query = "SELECT * FROM orders WHERE username= '$currentuser' ORDER BY date_time DESC";
+$run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+if (mysqli_num_rows($run_query) > 0) {
+while ($row = mysqli_fetch_array($run_query)) {
+    $order_id = $row['order_id'];
+    $foodname = $row['foodname'];
+    $price = $row['price'];
+    $quantity = $row['quantity'];
+    $username = $row['username'];
+    $status = $row['status'];
+    $date_time = $row['date_time'];
+  
+
+    echo "<tr>";
+    echo "<td align='center'><a class='btn btn-danger' onClick=\"javascript: return confirm('Are you sure you want to delete this order history?')\" href='?del=$order_id'><span class='new badge' data-badge-caption='' ><em class='fa fa-trash'></em></span></a></td>";
+    echo "<td>$order_id</td>";
+    echo "<td>$foodname</td>";
+    echo "<td>$price</td>";
+    echo "<td>$quantity</td>";
+    echo "<td>$status</td>";
+    echo "</tr>";
+
+}
+}
+else {
+    echo "<script>alert('No any history yet! Start Order now');
+          </script>";
+}
+?>
+                     
+                      </tbody>
                 </table>        
               </div>
-              <div class="panel-footer">
-                <div class="row">
-                  <div class="col col-xs-4">
-                  </div>
-                  <div class="col col-xs-8">
-                    <ul class="pagination hidden-xs pull-right">  
-                      <?php
-                      for ($page=1;$page<=$number_of_pages;$page++) {
-                        echo ' <li><a href="viewadmin.php?page=' . $page . '">' . $page . '</a> </li> ';}
-                        ?>                
-                    </ul>
-                  </div>
-                </div>
-              </div>
-</div></div></div>
+<?php
+ $conn = mysqli_connect("localhost","root","","foodtiger" ) or die ("error" . mysqli_error($conn));
+ if (isset($_GET['del'])) {
+     $id_del = mysqli_real_escape_string($conn, $_GET['del']);
+     $Email = $_SESSION['Email'];
+     $del_query = "DELETE FROM orders WHERE order_id='$id_del' AND username = '$Email' ";
+     $run_del_query = mysqli_query($conn, $del_query) or die (mysqli_error($conn));
+     if (mysqli_affected_rows($conn) > 0) {
+         echo "<script>alert('Order history deleted successfully');
+         window.location.href='orderhistory.php';</script>";
+     }
+     else {
+      echo "<script>alert('error occured.try again!');</script>";   
+     }
+     }
+?>    
+            
+
+
+
+
+
+
+
 
 </html>

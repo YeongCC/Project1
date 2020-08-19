@@ -11,7 +11,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="../css/main.css" rel="stylesheet"> 
-
+ 
     
 </head>
 
@@ -19,12 +19,9 @@
     <form >
    
  
-    <a href="viewblog.php" class="btn  button" class=".lol" >Blog</a>
-    <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
-    <a href="viewCustomerAcc.php" class="btn  button" class=".lol" >Customer Account</a>
-    <a href="viewPayhistory.php" class="btn  button" class=".lol" >view payment history</a>
-    <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >view order history</a>
-    <a href="test.php" class="btn  button" class=".lol" >Back</a>
-    <p><a href="../index/adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>
+    <a href="login.php" class="btn  button" class=".lol" >Logn In</a>
+
+   
+
     </form>
 </html>
