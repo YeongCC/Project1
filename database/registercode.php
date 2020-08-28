@@ -23,12 +23,12 @@ $gump->filter_rules(array(
   $validated_data = $gump->run($_POST);
   if($validated_data === false) {
     ?>
-    <script>alert(' <?php echo $gump->get_readable_errors(true); ?> ');window.location.href='../index.php'</script>;
+    <script>alert(' <?php echo $gump->get_readable_errors(true); ?> ');window.history.back();</script>;
     <?php
   }
   else if ($_POST['Password'] !== $_POST['Password2']) 
   {
-    echo  "<script>alert('Passwords do not match ');window.location.href='../index.php'</script>";
+    echo  "<script>alert('Passwords do not match ');window.history.back();</script>";
   }
   else {
   $Email = $validated_data['Email'];
@@ -36,7 +36,7 @@ $gump->filter_rules(array(
       $run_check = mysqli_query($conn , $checkemail) or die(mysqli_error($conn));
       $countemail = mysqli_num_rows($run_check); 
       if ($countemail > 0 ) {
-    echo  "<script>alert('Email is already taken! try a different one');window.location.href='../index.php'</script>";
+    echo  "<script>alert('Email is already taken! try a different one');window.history.back();</script>";
 }
 
   else {
@@ -57,7 +57,7 @@ $gump->filter_rules(array(
             
     }
     else {
-      echo "<script>alert('Error ');window.location.href='../index.php'</script>";
+      echo "<script>alert('Error ');window.history.back();</script>";
     }
     }
   }
