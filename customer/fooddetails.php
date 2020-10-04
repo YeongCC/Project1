@@ -43,7 +43,7 @@ if (isset($_GET['f_id'])) {
         <?php
         $sql = 'SELECT c_id,name FROM category';
         $sql = "SELECT * FROM food WHERE options = 'ENABLE' ORDER BY f_id";
-        $connect = mysqli_connect("localhost", "root", "", "foodtiger");
+        $connect = mysqli_connect("localhost", "root", "0612", "foodtiger");
 
         $query = "SELECT * FROM food ORDER BY f_id ASC";
         $result = mysqli_query($connect, $query);
@@ -92,7 +92,7 @@ if (isset($_GET['f_id'])) {
                                                                             echo $cart_id;
                                                                         } ?>" style="display: none;">
                                     <?php
-                                    if (isset($_SESSION['Name'])) { ?>
+                                    if (isset($_SESSION['userEmail'])) { ?>
                                         <input type="submit" name="add" class="btn  btn-warning text-uppercase text-white" value="Add to Cart" style="width:auto;">
                                     <?php
                                     } else { ?>

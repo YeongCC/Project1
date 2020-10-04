@@ -42,6 +42,8 @@ if(isset($_POST["add"]))
     $_SESSION["cart"][0] = $item_array;
   }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,6 +84,7 @@ if(!empty($_SESSION["cart"]))
           <thead class="thead-dark">
             <tr>
               <th width="5%">Action</th>
+              <th width="5%"></th>
               <th width="40%">Food Name</th>
               <th width="10%">Quantity</th>
               <th width="28%">Price Details</th>
@@ -96,11 +99,19 @@ if(!empty($_SESSION["cart"]))
             {
           ?>
           <tr>
-          <td><a href="database/cartcode.php?action=delete&id=<?php echo $values["food_id"]; ?>"><button class="btn btn-danger" style="font-size:0.8em"><span class="glyphicon glyphicon-trash"></span> Remove</button></a></td>
+          <td><a href="database/cartcode.php?action=delete&id=<?php echo $values["food_id"]; ?>"><button class="btn btn-danger" style="font-size:0.8em"> Remove</button></a></td>      
+        <form action="database/updateCart.php" method="post">
+            <td><input  class="btn btn-warning" style="font-size:0.8em"type="submit" name="event" value="Update"></input></td>
             <td><?php echo $values["food_name"]; ?></td>
-            <td><?php echo $values["food_quantity"] ?></td>
+            <td>
+            <input type="text"  name="U_quantity" class="form-control" value="<?php echo $values["food_quantity"] ?> " /></td>
             <td>RM <?php echo $values["food_price"]; ?></td>
             <td>RM <?php echo number_format($values["food_quantity"] * $values["food_price"], 2); ?></td>
+            <input type="text"  name="Ufood_id"value="<?php echo $values["food_id"];  ?>" style="display: none;" />
+            <input type="text"  name="Ufood_price"value="<?php echo $values["food_price"]; ?>" style="display: none;" />
+            <input type="text"  name="Ufood_name"value="<?php echo $values["food_name"]; ?>" style="display: none;" />
+            <input type="text"  name="Uc_id"value="<?php echo $values["c_id"]; ?>" style="display: none;" />
+     </form>
           </tr>
           <?php 
             $total = $total + ($values["food_quantity"] * $values["food_price"]);
@@ -109,12 +120,12 @@ if(!empty($_SESSION["cart"]))
             }
           ?>
           <tr>
-            <td colspan="3" ></td>
+            <td colspan="4" ></td>
             <td >Service Tax (10%)</td>
             <td>RM <?php echo $total*0.1; ?></td>
           </tr>
           <tr>
-            <td colspan="3" ></td>
+            <td colspan="4" ></td>
             <td style="font-weight:bold;">Total</td>
             <td style="font-weight:bold;">RM <?php echo number_format($total2, 2); ?></td>
           </tr>
@@ -125,7 +136,7 @@ if(!empty($_SESSION["cart"]))
             <button  type="submit"  name="insert"class="btn btn-success pull-right">Checkout</button>
             </form>
         <a href="database/cartcode.php?action=empty"><button class="btn btn-danger" onclick="return Confirm2();"><span class="glyphicon glyphicon-trash"></span> Empty Cart</button></a>
-        <a href="customer/foodpage.php"><button class="btn btn-primary">Continue Shopping</button></a>
+        <a href="customer/foodpage.php"><button class="btn btn-primary">Continue Shopping</button></a>   <!-- change here -->
       </div>
     </div>
     <?php
@@ -144,4 +155,11 @@ if(!empty($_SESSION["cart"]))
     ?>
     </body>
 </html>
-    
+
+<link rel="stylesheet" href="dist/jquery.nice-number.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="dist/jquery.nice-number.js"></script>
+<script>
+    $('input[type="number"]').niceNumber({
+    });
+</script>

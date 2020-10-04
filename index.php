@@ -28,7 +28,9 @@ session_start();
   </header>
   <div class="in1 ">
     <!-- Carousel -->
-
+      <?php
+      require "chat.php";
+      ?>
 
     <div id="demo" class="carousel slide" data-ride="carousel">
       <ul class="carousel-indicators">

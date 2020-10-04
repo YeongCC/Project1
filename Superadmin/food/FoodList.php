@@ -105,5 +105,6 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
                
                 
          </div> 
-
+         </div>
+         </div> 
 </html>

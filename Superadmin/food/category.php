@@ -74,7 +74,7 @@ $result = mysqli_query($conn, $sql);
                           <tr>
                             <td align="center">
                             <a class="btn btn-default" href ="CategoryList2.php? c_id=<?php echo $row['c_id'];?>"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"href="deleteCategory.php?c_id=<?php echo $row['c_id']; ?>" onclick="return confirm('Sure Want Delete?')"><span class="new badge" data-badge-caption="" ><em class="fa fa-trash"></em></span></a>
+                              <a class="btn btn-danger"href="deleteCategory.php?c_id=<?php echo $row['c_id']; ?>" onclick="return confirm('Sure Want Delete? It Delete will include the food ')"><span class="new badge" data-badge-caption="" ><em class="fa fa-trash"></em></span></a>
                             </td>
                             <td ><img src="<?php echo $row['image']; ?>" alt="image" style="width:150px; height:150px;object-fit: contain;"></td>
                             <td><?php echo $row['name'];?></td>

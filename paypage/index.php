@@ -101,7 +101,7 @@ $gtotal = 0;
        </div>
    <input type="text" name="payment_way" class="form-control mb-3 StripeElement StripeElement--empty" style="display: none;" value="card">    
    <input type="text" name="status" class="form-control mb-3 StripeElement StripeElement--empty"  style="display: none;" value="paid">   
-   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $_SESSION['Email']; ?>" style="display: none;"/>
+   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $_SESSION['userEmail']; ?>" style="display: none;"/>
    <input type="text" name="price" class="form-control" placeholder=""  value="<?php echo "$gtotal"; ?>"  style="display: none;"/> 
    <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
    <input type="text" class="form-control" name="time_date" value="<?php echo  $_SESSION['time_date']; ?>"  style="display: none;"/>

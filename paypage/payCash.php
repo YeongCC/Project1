@@ -85,7 +85,7 @@ if($result->num_rows>0){
       </div>
     </div>
   
-    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['Email']; ?>" style="display: none;" />
+    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['userEmail']; ?>" style="display: none;" />
     <input type="text" class="form-control" name="price" value="<?php echo $gtotal; ?>" style="display: none;" />
     <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
     <input type="text" class="form-control" name="payment_way" value="cash" style="display: none;" />

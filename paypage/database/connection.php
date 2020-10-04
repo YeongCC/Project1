@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "0612";
 $database = "foodtiger";
 
 // Create connection

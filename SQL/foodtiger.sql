@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2020 at 09:23 AM
+-- Generation Time: Sep 24, 2020 at 01:18 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -93,10 +92,11 @@ INSERT INTO `category` (`c_id`, `name`, `description`, `image`, `category_exixts
 
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL,
-  `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `to_user` varchar(255) NOT NULL,
+  `from_user` varchar(255) NOT NULL,
+  `message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -135,7 +135,9 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`cus_id`, `Name`, `Email`, `PhoneNo`, `Address`, `Password`) VALUES
 (1, 'HandsomeC', 'yeong4470@gmail.com', '0147464470', '27,jalan indah', '$2y$10$gevtf749FJBJMhkydZPDOuLdjxLF1O5xiNF6R9uQga7lWRR13Fyq.'),
 (2, 'qefewf', 'grwg@rfver.com', '0147464470', '27edweewfef', '$2y$10$Nzh2jASFeCUJobmfYgweX.kaa1jneALLvHX6AVSeWwSWipmH1H3im'),
-(3, 'egewge', 'admin@admin.com', '014-7464470', '27edwe', '$2y$10$s94xO95WlK6wBRDEjwSmduF0JzXtBEBtmsYydMt8GNvLvdONgWnfS');
+(3, 'egewge', 'admin@admin.com', '014-7464470', '27edwe', '$2y$10$s94xO95WlK6wBRDEjwSmduF0JzXtBEBtmsYydMt8GNvLvdONgWnfS'),
+(4, 'Jiahuitey', 'jiahuitey852003@hotmail.com', '01110858782', 'No53,Jalan Indah12/12,Taman Bukit Indah,81200 JB', '$2y$10$3joXWrQdw2LPSgCbUv0YzOPWOQaRPuFENZaf4eMkf5klv1vS3N6lu'),
+(5, 'ewew', 'wen@admin.com', '234234234', '27edwe', '$2y$10$2YQgeKx1NtS/2hXuHplVsuVugO4QPfOdYHHU1WY3PTS.5qnXd1Cf6');
 
 -- --------------------------------------------------------
 
@@ -149,6 +151,13 @@ CREATE TABLE `cus_order` (
   `email` varchar(255) NOT NULL,
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cus_order`
+--
+
+INSERT INTO `cus_order` (`custorder_id`, `order_id`, `email`, `time_date`) VALUES
+(8, '5f66fd441d137', 'jiahuitey852003@hotmail.com', '2020-09-20 06:57:11');
 
 -- --------------------------------------------------------
 
@@ -218,6 +227,13 @@ CREATE TABLE `orders` (
   `date_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`cust_id`, `order_id`, `foodname`, `price`, `quantity`, `username`, `date_time`) VALUES
+('5f66fd441d137', 11, ' Nasi Lemak ', 5, 1, ' jiahuitey852003@hotmail.com ', '2020-09-20 06:57:11');
+
 -- --------------------------------------------------------
 
 --
@@ -237,6 +253,14 @@ CREATE TABLE `payment` (
   `status` varchar(255) NOT NULL,
   `receive` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `order_id`, `email`, `Name`, `PhoneNo`, `Address`, `price`, `time_date`, `payment_way`, `status`, `receive`) VALUES
+(7, '5f66fd441d137', 'jiahuitey852003@hotmail.com', 'Jiahuitey', '01110858782', 'No53,Jalan Indah12/12,Taman Bukit Indah,81200 JB', 6, '2020-09-20 06:57:11', 'cash', 'paid', 'yes'),
+(8, '5f66fd441d137', 'jiahuitey852003@hotmail.com', 'Jiahuitey', '01110858782', 'No53,Jalan Indah12/12,Taman Bukit Indah,81200 JB', 0, '2020-09-20 06:57:11', 'cash', 'unpaid', 'no');
 
 -- --------------------------------------------------------
 
@@ -351,7 +375,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `chat`
@@ -369,13 +393,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cus_order`
 --
 ALTER TABLE `cus_order`
-  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -393,13 +417,13 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `transactions`

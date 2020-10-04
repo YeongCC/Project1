@@ -104,4 +104,6 @@ if(isset($_GET['c_id'])){
                             </form>
                          </div>
          </div> 
+         </div>
+         </div> 
 </html>

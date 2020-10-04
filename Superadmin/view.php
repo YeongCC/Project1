@@ -20,6 +20,7 @@
     <a href="viewCustomerAcc.php" class="btn  button" class=".lol" >Customer Account</a>
     <a href="viewPayhistory.php" class="btn  button" class=".lol" >View payment history</a>
     <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >View order history</a>
+    <a href="viewChatList.php" class="btn  button" class=".lol" >View Chatting List</a>
     <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
     <a href="adminhome.php" class="btn  button" class=".lol" >Back</a>
     <p><a href="adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>

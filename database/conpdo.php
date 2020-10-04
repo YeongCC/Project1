@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user= "root";
-$pwd = "";
+$pwd = "0612";
 $database = "foodtiger";
 
 try {

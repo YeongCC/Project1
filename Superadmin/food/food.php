@@ -22,15 +22,18 @@
 session_start();
 require('../../database/pdo.php');
 require('../../database/mysql.php');
-$sql = 'SELECT food.f_id, food.nameFood, food.description,food.imageFood,food.price,category.name
+$sql = 'SELECT food.*,category.name,category.c_id
         FROM food
         LEFT JOIN category
-        ON food.cart_id = category.c_id';
+        ON food.cart_id = category.c_id ';
 $query  = $pdoconn->prepare($sql);
 $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 $results_per_page = 6;
-$sql='SELECT * FROM food';
+$sql='SELECT food.*,category.name,category.c_id
+FROM food
+LEFT JOIN category
+ON food.cart_id = category.c_id ';
 $result = mysqli_query($conn, $sql);
 $number_of_results = mysqli_num_rows($result);
 $number_of_pages = ceil($number_of_results/$results_per_page);
@@ -40,7 +43,10 @@ if (!isset($_GET['page'])) {
   $page = $_GET['page'];
 }
 $this_page_first_result = ($page-1)*$results_per_page;
-$sql='SELECT * FROM food LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+$sql='SELECT food.*,category.name,category.c_id
+FROM food
+LEFT JOIN category
+ON food.cart_id = category.c_id LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 $result = mysqli_query($conn, $sql);
 foreach ($arr_all as $key){}
 ?>
@@ -87,7 +93,7 @@ foreach ($arr_all as $key){}
                             <td><img src="<?php echo $row['imageFood']; ?>" alt="image" style="width:150px; height:150px;object-fit: contain;" ></td>
                             <td><?php echo $row['nameFood'];?></td>
                             <td><?php echo $row['description']; ?></td>
-                            <td><?php echo $key['name']; ?></td>
+                            <td><?php echo $row['name'];?></td>
                             <td><?php echo $row['price']; ?></td>
                           </tr>
                         </tbody>
