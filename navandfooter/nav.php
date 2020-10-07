@@ -401,7 +401,7 @@
         event.preventDefault();
       } else {
         let please = document.querySelector('#please');
-        let noFound = document.querySelector('#noFound');
+        let notFound = document.querySelector('#notFound');
         let wrong = document.querySelector('#wrong');
 
         $.post("database/logincode.php", {
@@ -422,7 +422,7 @@
             notFound.style.display = "block";
             event.preventDefault();
           } else {
-            window.location = "index.php"
+            window.history.go(0);
           }
         });
       };

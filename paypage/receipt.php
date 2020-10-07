@@ -1,6 +1,10 @@
 <?php
 session_start();
 require 'database/connection.php';
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 unset($_SESSION["cart"]);
 $Email = $_SESSION['userEmail'];
 $sql = "select * from payment where email = '$Email' ";

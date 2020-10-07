@@ -10,8 +10,6 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="../../css/food.css" rel="stylesheet"> 
-    <script src="../js/delete.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -45,15 +43,15 @@ $result = mysqli_query($conn, $sql);
 <div class="container">
     <div class="row">
     <p></p>
-    <h1> &nbsp;&nbsp;&nbsp;&nbsp;Payment List</h1> 
+    <h1> &nbsp;&nbsp;&nbsp;&nbsp;View Payment List</h1> 
     <h1 style=" text-align: right;"><a href="view.php"  >Back</a></h1> 
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-0">
 
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6">
-                    <h3 class="panel-title">Food list</h3>
+                    <h3 class="panel-title">Payment list</h3>
                   </div>
                   <div class="col col-xs-6 text-right">
                   </div>

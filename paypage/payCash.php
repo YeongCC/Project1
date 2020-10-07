@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 require 'database/connection.php';
 $generateid = uniqid();
 $gtotal = 0;

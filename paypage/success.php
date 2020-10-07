@@ -1,5 +1,9 @@
 <?php
 require 'database/connection.php';
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 session_start();
   unset($_SESSION["cart"]);
   $Email = $_SESSION['userEmail'];

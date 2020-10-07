@@ -14,6 +14,12 @@ if(isset($_POST['insert'])) {
    echo "<script>alert('Congratulations,Insert Succesful!!!'); window.location.assign('adminPage.php');</script>";
        
    } else {
+    $query="UPDATE requestjob 
+    SET status = 'have not approve' 
+    WHERE id = '".$_SESSION["id"]."'";
+  $statement = $connect->prepare($query);
+  
+  $statement->execute();
        echo "<script>alert('Invalid !'); window.location.assign('adminPage.php');</script>";
    }
 

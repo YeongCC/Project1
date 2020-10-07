@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 require('database/connection.php');
 require('database/pdo.php');
 $Email = $_SESSION['Email'];
@@ -75,13 +79,13 @@ if(isset($_GET['order_id'])){
                   </thead>
                   <tbody>
                   <tr>
-                  <td><?php if (isset($_GET['order_id'])){echo $Name; }?></a></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $PhoneNo; }?></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $Address; }?></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $payment_way; }?></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $status; }?></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $receive; }?></td>
-                  <td><?php if (isset($_GET['order_id'])){echo $time_date; }?></td>
+                  <td><?php echo $Name; ?></a></td>
+                  <td><?php echo $PhoneNo; ?></td>
+                  <td><?php echo $Address; ?></td>
+                  <td><?php echo $payment_way; ?></td>
+                  <td><?php echo $status; ?></td>
+                  <td><?php echo $receive; ?></td>
+                  <td><?php echo $time_date; ?></td>
                   </tr>
                   <tr><td class='text-left' colspan='3' >Food</td>
                       <td class='text-left' colspan='3' >Quatity</td>

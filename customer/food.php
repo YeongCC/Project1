@@ -25,105 +25,153 @@ $search=" where cart_id='".$cart_id."'";
 <html>
 
 <head>
-    <title>FoodTiger - Foods</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../image/logo 256x256.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/nav-bar.css">
-    <link rel="stylesheet" href="../css/index.css">
-    
+  <title>FoodTiger - Foods</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../image/logo 256x256.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/nav-bar.css">
+  <link rel="stylesheet" href="../css/index.css">
+
 </head>
+
 <body>
-<header>        
-        <?php 
+  <header>
+    <?php 
           require "navandfooter/nav.php";
         ?>
-    </header>
-    <div class="in1">
-        <!-- Carousel -->
+  </header>
+  <div class="in1">
+    <!-- Carousel -->
     <div id="demo" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../image/food.jpg" alt="food" width="1100" height="500">
-            <div class="carousel-caption">
-              <h1>FoodTiger</h1>
-              <p class="p2">Hungry always Hungry</p>
-            </div>   
-          </div>
-          <div class="carousel-item">
-            <img src="../image/food4.jpg" alt="food2" width="1100" height="500">
-            <div class="carousel-caption">
-              <h1>Quality Food</h1>
-              <p class="p2">We deliver Quality Food and deliver On Time!</p>
-            </div>   
-          </div>
-          <div class="carousel-item">
-            <img src="../image/food3.jpg" alt="food3" width="1100" height="500">
-            <div class="carousel-caption">
-              <h1>Best Customer Service</h1>
-              <p class="p2">We deliver Best Customer Service and Support!</p>
-            </div>   
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../image/food.jpg" alt="food" width="1100" height="500">
+          <div class="carousel-caption">
+            <h1>FoodTiger</h1>
+            <p class="p2">Hungry always Hungry</p>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
+        <div class="carousel-item">
+          <img src="../image/food4.jpg" alt="food2" width="1100" height="500">
+          <div class="carousel-caption">
+            <h1>Quality Food</h1>
+            <p class="p2">We deliver Quality Food and deliver On Time!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../image/food3.jpg" alt="food3" width="1100" height="500">
+          <div class="carousel-caption">
+            <h1>Best Customer Service</h1>
+            <p class="p2">We deliver Best Customer Service and Support!</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
 
-    <div class="container" style="margin-top:3%;"><h2>Foods</h2>
-    <form style="margin-top:3%;" action="food.php" method="POST">
+    <div class="container" style="margin-top:3%;">
+      <h2>Foods</h2>
+      <form style="margin-top:3%;" action="food.php" method="POST">
         <input type="text" name="search" placeholder="Search..." id="search">
-    </form>
+      </form>
     </div>
     <div class="col-md-8 mx-auto" style="margin-top:1%;margin-bottom:3%;">
-        <div class="row">
-            <?php
+      <div class="row">
+        <?php
+              if(isset($_SESSION['userEmail']))
+              {
                 $sql="select * from food".$search;
                 $result=$conn->query($sql);
                 if($result->num_rows >0){
                     while($row = $result -> fetch_assoc()){     
-            ?>  
-            <div class="col-sm-4 " style="margin-top:20px;">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <div class="inner" style="text-align:center">
-                            <a href="fooddetails.php?f_id=<?php echo $row['f_id'];; ?>"><img src="image/<?php echo $row['imageFood'];?>"  class="img-fluid"  style="width:400px; height:300px;object-fit: contain;"></a>
-                        </div>
-                        <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
-                        <hr>
-                        <div class="card-heading"><?php echo $row['description'];?></div>
-                        <div class="card-heading"><h5>RM<?php echo $row['price'];?></h5></div>  
-                    </div>
-                </div>
-            </div>  
-            <?php
+            ?>
+        <div class="col-sm-4 " style="margin-top:20px;">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="inner" style="text-align:center">
+                <a href="fooddetails.php?f_id=<?php echo $row['f_id'];?>"><img
+                    src="image/<?php echo $row['imageFood'];?>" class="img-fluid"
+                    style="width:400px; height:300px;object-fit: contain;"></a>
+              </div>
+              <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
+              <hr>
+              <div class="card-heading"><?php echo $row['description'];?></div>
+              <div class="card-heading">
+                <h5>RM<?php echo $row['price'];?></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php
                 } 
             }else{?>
-            <div class="row">
-            <div class="container"  style="width:1500px; height:500px;" >
+        <div class="row">
+          <div class="container" style="width:1500px; height:500px;">
             <h1 style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-              <h1 style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Result....</h1>
-            </div>
-            </div>
-            <?php
-            }
-            ?>
+            <h1 style="text-align: center;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Result....</h1>
+          </div>
         </div>
+        <?php
+            }}else{
+              $sql="select * from food".$search;
+              $result=$conn->query($sql);
+              if($result->num_rows >0){
+                  while($row = $result -> fetch_assoc()){     
+              ?>
+        <div class="col-sm-4 " style="margin-top:20px;">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="inner" style="text-align:center">
+                <a href="#" data-toggle="modal" data-target="#login_form"><img
+                    src="image/<?php echo $row['imageFood'];?>" class="img-fluid"
+                    style="width:400px; height:300px;object-fit: contain;"></a>
+              </div>
+              <h5 class="card-title"><?php echo $row['nameFood'];?></h5>
+              <hr>
+              <div class="card-heading"><?php echo $row['description'];?></div>
+              <div class="card-heading">
+                <h5>RM<?php echo $row['price'];?></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <?php
+        }
+            }else{?>
+        <div class="row">
+          <div class="container" style="width:1500px; height:500px;">
+            <h1 style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+            <h1 style="text-align: center;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Result....</h1>
+          </div>
+        </div>
+        <?php      
+            }}
+            ?>
+      </div>
     </div>
-    </div>
-    <footer style="margin-top:5%;">
-        <?php 
+  </div>
+  <footer style="margin-top:5%;">
+    <?php 
           require "navandfooter/footer.php";
         ?>
-    </footer>
-    </body>
+  </footer>
+</body>
+
 </html>
+
+

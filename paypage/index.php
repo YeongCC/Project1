@@ -2,6 +2,10 @@
 
 <?php
 session_start();
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 require 'database/connection.php';
 $gtotal = 0;
   foreach($_SESSION["cart"] as $keys => $values)

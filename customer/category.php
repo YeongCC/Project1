@@ -97,7 +97,6 @@ $result=$conn->query($sql);
             </div>     
             <?php
               } 
-            
               ?>
         </div>
         <?php

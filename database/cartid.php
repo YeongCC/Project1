@@ -11,7 +11,7 @@ $query = mysqli_query($conn,$sql );
    echo "<script>alert('Please select Payment Option'); window.location.assign('paymentoptioncode.php');</script>";
       
   } else {
-      echo "<script>alert('Invalid !'); window.location.assign('cart.php');</script>";
+      echo "<script>alert('Invalid !'); window.location.assign('../cart.php');</script>";
   }
 ?>
 

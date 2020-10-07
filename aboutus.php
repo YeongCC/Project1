@@ -88,7 +88,7 @@ session_start();
             <div class="column-66" style="text-align: left;">
               <h1 class="large-font" style="color:#FFBD00;"><b>Jobs?</b></h1>
               <p style="font-size:1.3em;"> Ride with Us Flexible hours. Competitive pay. It’s exercise. It’s fitness. Most of all, it’s incredibly fun. Become a rider today and join our brilliant team.</p>
-              <a class="abutton" href="#"><button class="button3">Apply Now</button></a>
+              <a class="abutton" href="requestJob.php"><button class="button3">Apply Now</button></a>
             </div>
           </div>
         </div>

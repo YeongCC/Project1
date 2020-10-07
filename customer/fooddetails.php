@@ -16,7 +16,10 @@ if (isset($_GET['f_id'])) {
         }
     }
 }
-
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>

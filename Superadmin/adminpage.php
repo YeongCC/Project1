@@ -18,7 +18,7 @@
 
     <form >
     <a href="adminProfile.php" class="btn  button" class=".lol" >Admin Profile</a>
-    <a href="viewadmin.php" class="btn  button" class=".lol" >View Admin</a>
+    <a href="viewadmin.php" class="btn  button" class=".lol" >View Worker</a>
     <a href="addAdmin.php" class="btn  button" class=".lol" >Add admin</a>
     <a href="requestJob.php" class="btn  button" class=".lol" >View Request</a>
     <a href="adminhome.php" class="btn  button" class=".lol" >Back</a>

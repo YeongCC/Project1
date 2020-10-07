@@ -2,6 +2,10 @@
 session_start();
 require('database/connection.php');
 require('database/pdo.php');
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>

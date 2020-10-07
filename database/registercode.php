@@ -12,7 +12,8 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 		$phoneNO=$_POST['phoneNO'];
 		$address=$_POST['address'];
 		$password=$_POST['password'];
-		
+		$password = password_hash("$password" , PASSWORD_DEFAULT);
+
 		$duplicate=mysqli_query($conn,"select * from customer where Email='$email'");
 		if (mysqli_num_rows($duplicate)>0)
 		{

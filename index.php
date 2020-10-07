@@ -29,7 +29,10 @@ session_start();
   <div class="in1 ">
     <!-- Carousel -->
       <?php
-      require "chat.php";
+if(isset($_SESSION['userEmail']))
+{
+require "chat.php";
+}    
       ?>
 
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -160,7 +163,8 @@ session_start();
     require "navandfooter/footer.php";
     ?>
   </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;

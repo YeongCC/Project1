@@ -1,7 +1,10 @@
 <?php  
 include "database/connection.php";
 session_start();
-
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 if (isset($_SESSION['userEmail'])) {
 	$Email = $_SESSION['userEmail'];
 	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 

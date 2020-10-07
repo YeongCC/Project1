@@ -18,7 +18,6 @@
 <?php
 session_start();
 
-
 ?>
     <div class="container">    
  <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-4">
@@ -33,14 +32,14 @@ session_start();
                                 <div class="form-group">
                                     <label for="Name" class="col-md-3 control-label">Name :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  name="Name" id="Name" >
+                                        <input type="text" class="form-control"  name="Name" id="Name" value="">
                                     </div>
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="Email" class="col-md-3 control-label">Email :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="Email" id="Email">
+                                        <input type="text" class="form-control" name="Email" id="Email" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -48,7 +47,6 @@ session_start();
                                     <div class="col-md-9">
                                        <select name="Position"  class="form-control" style="height:30px;">
                                             <option value="Admin">Admin</option>
-                                            <option value="Deliver Man">Deliver Man</option>
                                         </select>
                                     </div>
                                 </div>

@@ -60,12 +60,12 @@ if(isset($_GET['f_id'])){
                         <div class="panel-body" >
                             
                             <form  class="form-horizontal" role="form" action="updateFood.php" method="POST" enctype="multipart/form-data" id="edit-form" >
-                            <input name="f_id" type="text" class="form-control" placeholder="" value="<?php if (isset($_GET['f_id'])){echo  $_SESSION['f_id']; }?>" style="display: none;">
-                            <input name="cart_id" type="text" class="form-control" placeholder="" value="<?php if (isset($_GET['f_id'])){echo $_SESSION['cart_id']; }?>" style="display: none;">
+                            <input name="f_id" type="text" class="form-control" placeholder="" value="<?php echo  $_SESSION['f_id']; ?>" style="display: none;">
+                            <input name="cart_id" type="text" class="form-control" placeholder="" value="<?php echo $_SESSION['cart_id']; ?>" style="display: none;">
                                 <div class="form-group">
                                     <label for="nameFood" class="col-md-3 control-label">Food :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  name="nameFood" id="nameFood" value="<?php if (isset($_GET['f_id'])){echo  $_SESSION['nameFood']; }?>">
+                                        <input type="text" class="form-control"  name="nameFood" id="nameFood" value="<?php echo  $_SESSION['nameFood']; ?>">
                                     </div>
                                 </div>
                                
@@ -74,14 +74,14 @@ if(isset($_GET['f_id'])){
                                 <div class="form-group">
                                     <label for="description" class="col-md-3 control-label">Description :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="description"  id="description" value="<?php if (isset($_GET['f_id'])){echo $_SESSION['description']; }?>">
+                                        <input type="text" class="form-control" name="description"  id="description" value="<?php echo $_SESSION['description']; ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="price" class="col-md-3 control-label">Price :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="price"  id="price" value="<?php if (isset($_GET['f_id'])){echo $_SESSION['price']; }?>">
+                                        <input type="text" class="form-control" name="price"  id="price" value="<?php echo $_SESSION['price']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">

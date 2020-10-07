@@ -61,21 +61,21 @@ if(isset($_GET['c_id'])){
                         <div class="panel-body" >
                             
                             <form id="edit-form" class="form-horizontal" role="form" action="updateCategory.php" method="POST"  enctype="multipart/form-data">
-                            <input name="c_id" type="text" class="form-control" placeholder="" value="<?php if (isset($_GET['c_id'])){echo $_SESSION['c_id']; }?>" style="display: none;">
+                            <input name="c_id" type="text" class="form-control" placeholder="" value="<?php echo $_SESSION['c_id']; ?>" style="display: none;">
                                 <div class="form-group">
                                     <label for="nameFood" class="col-md-3 control-label">Category :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  name="name" id="nameFood" value="<?php if (isset($_GET['c_id'])){echo $_SESSION['name']; }?>">
+                                        <input type="text" class="form-control"  name="name" id="nameFood" value="<?php echo $_SESSION['name']; ?>">
                                     </div>
                                 </div>
           
                                 <div class="form-group">
                                     <label for="description" class="col-md-3 control-label">Descriptuon :</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="description"  id="description" value="<?php if (isset($_GET['c_id'])){echo $_SESSION['description']; }?>">
+                                        <input type="text" class="form-control" name="description"  id="description" value="<?php echo $_SESSION['description']; ?>">
                                     </div>
                                 </div>
-                                <input name="category_exixts" type="text" value="<?php if (isset($_GET['c_id'])){echo $_SESSION['category_exixts']; }?>" style="display: none;">  
+                                <input name="category_exixts" type="text" value="<?php echo $_SESSION['category_exixts']; ?>" style="display: none;">  
                                 <div class="form-group">
                                     <label for="image" class="col-md-3 control-label">Image :</label>
                                     <div class="col-md-9">

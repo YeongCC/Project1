@@ -1,5 +1,9 @@
 <?php
 include "database/connection.php";
+if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 session_start();  
 ?>
 <!DOCTYPE html>

@@ -13,7 +13,11 @@ if (isset($_SESSION['userEmail'])) {
     $PhoneNo = $row['PhoneNo'];
     $Address = $row['Address'];
 
-	}}
+  }}
+  if(!isset($_SESSION['userEmail']))
+{
+	header("location:index.php");
+}
 ?>
 <!DOCTYPE html>  
 <html>  

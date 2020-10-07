@@ -11,7 +11,8 @@
 <header>
   <nav class="navbar navbar-expand-md  navbar-dark fixed-top"
     style="background-image: linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% );">
-    <a class="navbar-brand" href="index.php"><img src="../image/logo 256x256.png" alt="logo" width="30" height="30" style="margin-left:30%; display: block;max-width: 100%;"></a>
+    <a class="navbar-brand" href="../index.php"><img src="../image/logo 256x256.png" alt="logo" width="30" height="30"
+        style="margin-left:30%; display: block;max-width: 100%;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -59,7 +60,7 @@
       </div>
       <div class="container1">
         <h1>Login</h1>
-  
+
         <hr>
         <label for="Email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="Email" id="Email">
@@ -113,7 +114,7 @@
         <input type="text" class="form-control" id="phoneNO" placeholder="Phone" name="phoneNO">
         <span id="phonLen" style="color:red;display:none">The Phone Number field needs to be at least 10
           characters</span>
-          <span id="phonefield" style="color:red;display:none">Fields are required</span>
+        <span id="phonefield" style="color:red;display:none">Fields are required</span>
 
         <label for="Address">Address:</label>
         <input type="text" class="form-control" id="address" placeholder="address" name="address">
@@ -124,21 +125,21 @@
         <span id="match" style="color:red;display:none">Password is not match</span>
         <span id="passwordLen" style="color:red;display:none">The Password field needs to be at least 6
           characters</span>
-          <span id="pass1field" style="color:red;display:none">Fields are required</span>
+        <span id="pass1field" style="color:red;display:none">Fields are required</span>
 
 
         <label for="Repeat Password">Repeat Password:</label>
         <input type="password" class="form-control" id="password2" placeholder="Password" name="password2">
         <span id="pass2field" style="color:red;display:none">Fields are required</span>
-        
+
 
 
         <p>By creating an account you agree to our <a href="term.php" style="color:dodgerblue">Terms & Privacy</a>.</p>
-       
+
         <div class="clearfix">
-            <button type="button" data-dismiss="modal" class="cancelbtn2 ">Cancel</button>
-            <input type="button" name="save" class="signupbtn" value="Register" id="register_button">
-          </div>
+          <button type="button" data-dismiss="modal" class="cancelbtn2 ">Cancel</button>
+          <input type="button" name="save" class="signupbtn" value="Register" id="register_button">
+        </div>
 
       </div>
   </div>
@@ -179,7 +180,7 @@
       if (name != "") {
         if (email != "") {
           if (phoneNO != "") {
-            if (address != "" ) {
+            if (address != "") {
               if (password != "") {
                 if (password2 != "") {
                   if (password == password2) {
@@ -402,7 +403,7 @@
         event.preventDefault();
       } else {
         let please = document.querySelector('#please');
-        let noFound = document.querySelector('#noFound');
+        let notFound = document.querySelector('#notFound');
         let wrong = document.querySelector('#wrong');
 
         $.post("../database/logincode.php", {
@@ -423,7 +424,7 @@
             notFound.style.display = "block";
             event.preventDefault();
           } else {
-            window.location = "../index.php"
+            window.history.go(0);
           }
         });
       };

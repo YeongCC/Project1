@@ -29,11 +29,8 @@ if($page == 0 || $page == 1){
 else {
     $page1 = ($page * 6) - 6;	
 }
-$search="";
-if(isset($_REQUEST['search'])){
-    $search=" and Name like '%".$_REQUEST['search']."%'or email like '%".$_REQUEST['search']."%'or Address like '%".$_REQUEST['search']."%'";
-}
-$sql="select id,order_id,email,Name,PhoneNo,Address,price,time_date,payment_way,status,receive from payment where status='unpaid' or receive='no'".$search." LIMIT ".$page1.", 6";
+
+$sql="select id,order_id,email,Name,PhoneNo,Address,price,time_date,payment_way,status,receive from payment where status='unpaid' or receive='no' LIMIT ".$page1.", 6";
 $result=$conn->query($sql); 
 ?>
 						
