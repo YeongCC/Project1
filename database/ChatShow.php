@@ -1,7 +1,7 @@
 <?php
 include "connection.php";
 session_start();
-$currentuser = $_SESSION['userEmail'];
+$currentuser = $_SESSION['userEmail-foodtiger'];
 
   $query = "SELECT * FROM chat ";
   $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));

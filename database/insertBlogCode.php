@@ -22,7 +22,7 @@
              }
          }
      }else{
-	echo "<script>alert('Invalid !'); window.location.assign('../Superadmin/insertBlog.php');</script>";
+	
      }
 
  }
@@ -31,16 +31,19 @@
 	
     $Email = $_POST['Email'];
     $Name = $_POST['Name'];
+    $description = addslashes($_POST['description']);
     $contain = addslashes($_POST['contain']);
     $title = $_POST['title'];
     $files = $_FILES['blogUpload'];
     $blogImage = upload_blog('../image/blog/', $files);
 
-
-	$sql="INSERT INTO `blog`(`id`, `title`,`contain`, `image`, `Email`, `Name` ) VALUES ('-','$title ','$contain','$blogImage','$Email','$Name')";
+    if(!empty($blogImage)){
+	$sql="INSERT INTO `blog`(`id`, `title`,`description`,`contain`, `image`, `Email`, `Name` ) VALUES ('-','$title ',' $description','$contain','$blogImage','$Email','$Name')";
     $query = mysqli_query($conn,$sql );
-	echo "<script>alert('Congratulations,Insert Succesful!!!'); window.location.assign('../Superadmin/Blogmanage.php');</script>";
-    	
+	echo "<script>alert('Congratulations,Insert Succesful!!!'); window.history.back();</script>";
+}else{
+    echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('../Superadmin/insertBlog.php');</script>";
+}	
     } else {
 		echo "<script>alert('Invalid !'); window.location.assign('../Superadmin/insertBlog.php');</script>";
     }

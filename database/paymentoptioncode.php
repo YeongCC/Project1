@@ -1,7 +1,7 @@
 <?php
 require 'connection.php';
 session_start();
-$Email = $_SESSION['userEmail'];
+$Email = $_SESSION['userEmail-foodtiger'];
 $sql = "select * from cus_order where email = '$Email' ";
 $result=$conn->query($sql);
 if($result->num_rows>0){

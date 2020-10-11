@@ -29,7 +29,7 @@ session_start();
   <div class="in1 ">
     <!-- Carousel -->
       <?php
-if(isset($_SESSION['userEmail']))
+if(isset($_SESSION['userEmail-foodtiger']))
 {
 require "chat.php";
 }    
@@ -76,42 +76,38 @@ require "chat.php";
     <div class="container" style="margin-top:3%;">
       <h2>Our Foods</h2>
       <div class="card-deck" style="margin-top:5%;">
+       <?php
+               $query = "SELECT * FROM blog limit 3";
+               $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+               if (mysqli_num_rows($run_query) > 0) {
+               while ($row = mysqli_fetch_array($run_query)) {
+                   $id = $row['id'];
+                   $title = $row['title'];
+                   $image = $row['image'];
+                   $description = $row['description'];
+					?>
         <div class="card">
           <div class="inner">
-            <a href="customer/category.php"><img class="card-img-top" src="image/malay food.jpg" alt="Malay Cuisine"></a>
+            <a href="customer/blogDetail.php?id=<?php echo $row['id'];?>"><img class="card-img-top" src="image/<?php echo $row['image'];?>" alt="<?php echo $row['title'];?>"></a>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Malay</h5>
-            <p class="card-text">Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.</p>
-            <a href="customer/category.php" class="btn btn-warning text-white">Learn More</a>
+            <h5 class="card-title"><?php echo $row['title'];?></h5>
+            <p class="card-text"><?php echo $row['description'];?></p>
+            <a href="customer/blogDetail.php?id=<?php echo $row['id'];?>" class="btn btn-warning text-white">Look More</a>
           </div>
-        </div>
-        <div class="card">
-          <div class="inner">
-            <a href="customer/category.php"><img class="card-img-top" src="image/chinese food.jpg" alt="Chinese Cuisine"></a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Chinese</h5>
-            <p class="card-text">Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.</p>
-            <a href="customer/category.php" class="btn btn-warning text-white">Learn More</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="inner">
-            <a href="customer/category.php"><img class="card-img-top" src="image/western food.jpg" alt="Western Cuisine"></a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Western</h5>
-            <p class="card-text">European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term "European". &nbsp;</p>
-            <a href="customer/category.php" class="btn btn-warning text-white">Learn More</a>
-          </div>
-        </div>
+        </div> 
+         <?php
+              } 
+         }
+              ?>
       </div>
+      <a href="customer/blog.php"><button  class="btn btn-warning text-white" style="margin-top:1%;">Read More</button> </a>
     </div>
-
+   
+       
     <!-- Carousel 2 -->
     <div id="demo" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner" style="margin-top:5%;">
+      <div class="carousel-inner" style="margin-top:2%;">
         <div class="carousel-item active">
           <img src="image/food2.jpg" alt="food4" width="100%" height="100%">
         </div>
@@ -123,7 +119,34 @@ require "chat.php";
         </div>
       </div>
     </div>
-
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<div class="container" style="margin-top:3%;">
+      <h2>Category</h2>
+      <div class="card-deck" style="margin-top:5%;">
+       <?php
+               $query = "SELECT * FROM category limit 3";
+               $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+               if (mysqli_num_rows($run_query) > 0) {
+               while ($row = mysqli_fetch_array($run_query)) {
+                   $c_id = $row['c_id'];
+                   $name = $row['name'];
+                   $image = $row['image'];         
+					?>
+        <div class="card">
+          <div class="inner">
+            <a href="customer/food.php?category=<?php echo $row['c_id'];?>"><img class="card-img-top" src="image/image/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $row['name'];?></h5> 
+          </div>
+        </div> 
+         <?php
+              } 
+         }
+              ?>
+      </div>
+      <a href="customer/category.php"><button  class="btn btn-warning text-white" style="margin-top:1%;">Look More</button> </a>
+    </div>
     <!-- About Us -->
     <div class="container" style="margin-top:3%;">
       <h2>About Us</h2>
@@ -140,6 +163,7 @@ require "chat.php";
         </div>
       </div>
     </div>
+
 
     <!-- How It Works -->
     <div class="container" style="margin-top:3%;margin-bottom: 3%;">

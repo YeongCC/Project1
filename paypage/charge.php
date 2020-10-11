@@ -84,4 +84,4 @@ $transaction = new Transaction();
 $transaction->addTransaction($transactionData);
 
 // Redirect to success
-header('Location: success.php?tid='.$charge->id.'&product='.$charge->description);
+header('Location: doneStripe.php?tid='.$charge->id.'&product='.$charge->description);

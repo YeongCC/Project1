@@ -1,7 +1,7 @@
 <?php
 include "database/connection.php";
 session_start(); 
-if(!isset($_SESSION['userEmail']))
+if(!isset($_SESSION['userEmail-foodtiger']))
 {
 	header("location:index.php");
 }

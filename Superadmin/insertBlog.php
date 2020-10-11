@@ -50,7 +50,13 @@ session_start();
                                 style="display: none;">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="contain" class="col-md-3 control-label">Description :</label>
+                        <div class="col-md-9">
+                            <textarea  name="description" id="description" 
+                                style=" overflow-y: scroll;height: 100px; width:100%;" ></textarea>  
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="contain" class="col-md-3 control-label">Contain :</label>
                         <div class="col-md-9">

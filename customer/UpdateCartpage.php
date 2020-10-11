@@ -44,39 +44,36 @@ if(!isset($_SESSION['userEmail-foodtiger']))
     </header>
     <div class="container" style="margin-top:8%;margin-bottom:3%;">
         <?php
-        $sql = 'SELECT c_id,name FROM category';
-        $sql = "SELECT * FROM food WHERE options = 'ENABLE' ORDER BY f_id";
-        $connect = mysqli_connect("localhost", "root", "0612", "foodtiger");
+     	if(array_key_exists('cart', $_SESSION) AND !empty($_SESSION['cart'])){
+            $editData = $_SESSION['cart'][$_GET['id']];
+        }
+        $_SESSION['id'] = $_GET['id'];
 
-        $query = "SELECT * FROM food ORDER BY f_id ASC";
-        $result = mysqli_query($connect, $query);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_all($result)) {
         ?>
-                <form method="post" action="cart.php?action=add&id=<?php echo $f_id; ?>">
+                <form method="post" action="../database/updateCartCode.php">
                     <div class="card">
                         <div class="row">
 
                             <aside class="col-sm-6 border-right">
                                 <article class="gallery-wrap">
                                     <div class="img-big-wrap">
-                                        <img src="image/<?php echo $imagefood; ?>" alt="<?php echo $nameFood; ?>" class="img-fluid" style="width:100%;height:70%;margin-top:100px;text-align:center;">
+                                        <img src="image/<?php echo $editData["food_image"]; ?>" alt="<?php echo $editData["food_name"]; ?>" class="img-fluid" style="width:100%;height:70%;margin-top:100px;text-align:center;">
                                     </div> <!-- slider-product.// -->
                                 </article> <!-- gallery-wrap .end// -->
                             </aside>
                             <aside class="col-sm-6">
                                 <article class="card-body p-5">
-                                    <h3 class="title mb-3"><?php echo $nameFood; ?></h3>
+                                    <h3 class="title mb-3"><?php echo $editData["food_name"]; ?></h3>
 
                                     <p class="price-detail-wrap">
                                         <span class="price h3 text-warning">
-                                            <span class="currency">RM<?php echo $price; ?></span>
+                                            <span class="currency">RM<?php echo $editData["food_price"]; ?></span>
                                         </span>
                                     </p> <!-- price-detail-wrap .// -->
                                     <dl class="item-property">
                                         <dt>Description</dt>
                                         <dd>
-                                            <p><?php echo  $description; ?></p>
+                                            <p><?php echo  $editData["food_description"]; ?></p>
                                         </dd>
                                     </dl>
                                     <hr>
@@ -84,28 +81,24 @@ if(!isset($_SESSION['userEmail-foodtiger']))
                                         <div class="col-sm-5">
                                             <dl class="param param-inline">
                                                     <dt>Quantity: </dt>
-                                                    <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" data-decimals="0" />
+                                                    <input type="number" min="1" max="25" name="food_quantity" class="form-control" value="<?php echo  $editData["food_quantity"]; ?>" data-decimals="0" />
                                             </dl> <!-- item-property .// -->
                                         </div> <!-- col.// -->
                                     </div> <!-- row.// -->
                                     <hr>
-                                    <input name="hidden_image" value="<?php echo $imagefood; ?>" style="display: none;">
-                                    <input name="hidden_name" value="<?php echo $nameFood; ?>" style="display: none;">
-                                    <input name="hidden_price" value="<?php echo  $price; ?>" style="display: none;">
-                                    <input name="hidden_description" value="<?php echo  $description; ?>" style="display: none;">
-                                
-                                        <input type="submit" name="add" class="btn  btn-warning text-uppercase text-white" value="Add to Cart" style="width:auto;">
+                                    <input name="food_image" value="<?php echo $editData["food_image"]; ?>" style="display: none;">
+                                    <input name="food_name" value="<?php echo $editData["food_name"]; ?>" style="display: none;">
+                                    <input name="food_price" value="<?php echo $editData["food_price"]; ?>" style="display: none;">
+                                    <input name="food_description" value="<?php echo  $editData["food_description"]; ?>" style="display: none;">
+                              
                                  
-                                
-                               
-                                </article> <!-- card-body.// -->
-                            </aside> <!-- col.// -->
-                        </div> <!-- row.// -->
-                    </div> <!-- card.// -->
-            <?php
-            }
-        }
-            ?>
+                                        <input type="submit" name="update" class="btn  btn-warning text-uppercase text-white" value="Add to Cart" style="width:auto;">
+                                        <input type="submit" name="cancel" class="btn  btn-danger text-uppercase text-white" value="Cancel" style="width:auto;">
+                                </article> 
+                            </aside> 
+                        </div> 
+                    </div> 
+     
                 </form>
 
 

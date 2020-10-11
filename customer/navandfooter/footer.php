@@ -28,9 +28,6 @@
                 <a class="a2" href="../aboutus.php">About Us</a>
                 </li>
                 <li>
-                <a class="a2" href="#!">Support</a>
-                </li>
-                <li>
                 <a class="a2" href="../term.php">Term</a>
                 </li>
             </ul>

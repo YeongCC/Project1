@@ -29,7 +29,7 @@ $query = "SELECT * FROM customer WHERE Email = '$Email'";
                   $_SESSION['email']  = $email;
                   $_SESSION['PhoneNo'] = $PhoneNo;
                   $_SESSION['Address'] = $Address;
-                  $_SESSION['userEmail'] = $Email;
+                  $_SESSION['userEmail-foodtiger'] = $Email;
                   echo "success";  
                   
                 }

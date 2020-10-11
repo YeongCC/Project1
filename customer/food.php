@@ -89,7 +89,7 @@ $search=" where cart_id='".$cart_id."'";
     <div class="col-md-8 mx-auto" style="margin-top:1%;margin-bottom:3%;">
       <div class="row">
         <?php
-              if(isset($_SESSION['userEmail']))
+              if(isset($_SESSION['userEmail-foodtiger']))
               {
                 $sql="select * from food".$search;
                 $result=$conn->query($sql);

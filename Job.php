@@ -1,26 +1,17 @@
-<?php
-include "database/connection.php";
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>FoodTiger - About Us</title>
+  <title>Rider - Delivery Jobs</title>
   <link rel="shortcut icon" type="image/x-icon" href="image/logo 256x256.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/nav-bar.css">
-
   <link rel="stylesheet" href="css/aboutus.css">
 
 </head>
-<header>
-  <?php
-  require "navandfooter/nav.php";
-  ?>
-</header>
+
 
 <body>
   <div class="in1">
@@ -63,14 +54,17 @@ session_start();
     </div>
     <!-- About Us -->
     <div style="text-align:center;margin-top:3%;">
-      <h2>About Us</h2>
-
+      <b style="font-style: italic;font-size:3em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"">Become a foodtiger</b>
+         <h1 style="font-style: italic;font-size:5em;">Rider</h1>
+         <?php
+  require "requestJob.php";
+  ?>
       <!-- First -->
       <div class="container" style="margin-top: 3%;">
         <div class="row">
           <div class="column-66" style="text-align: left;">
-            <h1 class="large-font" style="color:#FFBD00;"><b>We are FoodTiger.</b></h1>
-            <p style="font-size:1.3em;">FoodTiger is a convenient online food ordering website. Customers can browse through the system and place order easily. "Bringing good food into your everyday. That's our mission.</p>
+            <h1 class="large-font" style="color:#FFBD00;"><b>Explore your city.</b></h1>
+            <p style="font-size:1.3em;">Drive around and become a trip advisor to your friends. You'll see something new everyday.</p>
           </div>
           <div class="column-33" style="margin-top: 1%;">
             <img src="image/logo + font_4.png" alt="Logo" width="335" height="471">
@@ -86,34 +80,18 @@ session_start();
               <img src="image/aboutpicture.jpg" alt="Jobs" width="335" height="471">
             </div>
             <div class="column-66" style="text-align: left;">
-              <h1 class="large-font" style="color:#FFBD00;"><b>Jobs?</b></h1>
-              <p style="font-size:1.3em;"> Ride with Us Flexible hours. Competitive pay. It’s exercise. It’s fitness. Most of all, it’s incredibly fun. Become a rider today and join our brilliant team.</p>
-              <a class="abutton" href="Job.php"><button class="button3">Apply Now</button></a>
+              <h1 class="large-font" style="color:#FFBD00;"><b>Tips?</b></h1>
+              <p style="font-size:1.3em;"> Earn up to RM12 per hour. The tips go straight in your pocket.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Third -->
-      <div class="container" style="margin-top: 3%;margin-bottom:3%;">
-        <div class="row">
-          <div class="column-66" style="text-align: left;">
-            <h1 class="large-font" style="color:#FFBD00;"><b>Need Some Help?</b></h1>
-            <p style="font-size:1.3em;">You can contact our customer service center. We provide the best customer service. </p>
-            <a class="abutton" href="#"><button class="button3">Contact Us</button></a>
-          </div>
-          <div class="column-33" style="margin-top: 2%;">
-            <img src="image/helppicture.jpg" alt="Support" width="335" height="471">
-          </div>
-        </div>
-      </div>
+  
+
     </div>
   </div>
 </body>
-<footer>
-  <?php
-  require "navandfooter/footer.php";
-  ?>
-</footer>
+
 
 </html>

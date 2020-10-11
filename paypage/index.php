@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <?php
-session_start();
-if(!isset($_SESSION['userEmail']))
-{
-	header("location:index.php");
-}
+
 require 'database/connection.php';
+session_start();
+if(!isset($_SESSION['userEmail-foodtiger']))
+{
+	header("location:../index.php");
+}
+
 $gtotal = 0;
   foreach($_SESSION["cart"] as $keys => $values)
   {
@@ -17,14 +19,14 @@ $gtotal = 0;
     $tax = $total*0.1;
     $gtotal = $gtotal + $total + $tax;
   }
-  if(isset($_SESSION['userEmail'])){
-    $Email=$_SESSION['userEmail'];
+  if(isset($_SESSION['userEmail-foodtiger'])){
+    $Email=$_SESSION['userEmail-foodtiger'];
     $sql="select * from customer where email = '$Email'";
     $result=$conn->query($sql);
      if($result->num_rows>0){
          while($row=$result->fetch_assoc()){
             $_SESSION['Name']=$row['Name'];
-            $_SESSION['userEmail']=$row['Email'];
+            $_SESSION['userEmail-foodtiger']=$row['Email'];
             $_SESSION['PhoneNo']=$row['PhoneNo'];
             $_SESSION['Address']=$row['Address'];
             $_SESSION['Password']=$row['Password'];
@@ -103,9 +105,9 @@ $gtotal = 0;
            <input type="text" name="Address" class="form-control " placeholder="Address"  value="<?php echo $_SESSION['Address']; ?>">             
          </div>
        </div>
-   <input type="text" name="payment_way" class="form-control mb-3 StripeElement StripeElement--empty" style="display: none;" value="card">    
+   <input type="text" name="payment_way" class="form-control mb-3 StripeElement StripeElement--empty" style="display: none;" value="stripe">    
    <input type="text" name="status" class="form-control mb-3 StripeElement StripeElement--empty"  style="display: none;" value="paid">   
-   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $_SESSION['userEmail']; ?>" style="display: none;"/>
+   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $_SESSION['userEmail-foodtiger']; ?>" style="display: none;"/>
    <input type="text" name="price" class="form-control" placeholder=""  value="<?php echo "$gtotal"; ?>"  style="display: none;"/> 
    <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
    <input type="text" class="form-control" name="time_date" value="<?php echo  $_SESSION['time_date']; ?>"  style="display: none;"/>

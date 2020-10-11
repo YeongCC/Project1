@@ -1,9 +1,22 @@
 <?php
 include "../database/connection.php";
+if (isset($_SESSION['userEmail-foodtiger'])) {
+	$Email = $_SESSION['userEmail-foodtiger'];
+	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 
+	$result= mysqli_query($conn , $query) or die (mysqli_error($conn));
+	if (mysqli_num_rows($result) > 0 ) {
+		$row = mysqli_fetch_array($result);
+		$userid = $row['cus_id'];
+		$Email = $row['Email'];
+		$Name = $row['Name'];
+    $PhoneNo = $row['PhoneNo'];
+    $Address = $row['Address'];
+
+  }}
 session_start();  
-if(!isset($_SESSION['userEmail']))
+if(!isset($_SESSION['userEmail-foodtiger']))
 {
-	header("location:index.php");
+	header("location:../index.php");
 }
 ?>
 <!DOCTYPE html>

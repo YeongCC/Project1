@@ -88,7 +88,7 @@ $result = mysqli_query($conn, $sql);
     <div class="col-md-8 mx-auto" style="margin-top:1%;margin-bottom:3%;">
       <div class="row">
         <?php
-            if(isset($_SESSION['userEmail']))
+            if(isset($_SESSION['userEmail-foodtiger']))
             {
                while($row = mysqli_fetch_array($result)) {     
             ?>

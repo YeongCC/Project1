@@ -24,7 +24,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="foodpage.php">Foods</a>
         </li>
-        <?php if (isset($_SESSION['userEmail'])) { 
+        <?php if (isset($_SESSION['userEmail-foodtiger'])) { 
            ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" data-toggle="dropdown">
@@ -32,7 +32,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../userprofile.php">Profile</a>
-            <a class="dropdown-item" href="../cart.php">Cart</a>
+            <a class="dropdown-item" href="cart.php">Cart</a>
             <a class="dropdown-item" href="../paymenthistory.php">Payment History</a>
           </div>
         </li>
@@ -78,7 +78,7 @@
       </div>
 
       <div class="container1" style="background-color:#f1f1f1">
-        <span class="psw">No Account??<a href="#" data-toggle="modal" data-target="#signUp">Register</a></span>
+        <span class="psw">No Account?<a href="#" data-toggle="modal" data-target="#signUp">Register</a></span>
       </div>
     </div>
   </div>

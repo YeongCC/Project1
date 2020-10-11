@@ -1,12 +1,12 @@
 <?php  
 include "database/connection.php";
 session_start();
-if(!isset($_SESSION['userEmail']))
+if(!isset($_SESSION['userEmail-foodtiger']))
 {
 	header("location:index.php");
 }
-if (isset($_SESSION['userEmail'])) {
-	$Email = $_SESSION['userEmail'];
+if (isset($_SESSION['userEmail-foodtiger'])) {
+	$Email = $_SESSION['userEmail-foodtiger'];
 	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 
 	$result= mysqli_query($conn , $query) or die (mysqli_error($conn));
 	if (mysqli_num_rows($result) > 0 ) {

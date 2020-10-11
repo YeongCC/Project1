@@ -1,1 +1,0 @@
-Succesfull wait the email

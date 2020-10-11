@@ -75,7 +75,6 @@ if(isset($_GET['c_id'])){
                                         <input type="text" class="form-control" name="description"  id="description" value="<?php echo $_SESSION['description']; ?>">
                                     </div>
                                 </div>
-                                <input name="category_exixts" type="text" value="<?php echo $_SESSION['category_exixts']; ?>" style="display: none;">  
                                 <div class="form-group">
                                     <label for="image" class="col-md-3 control-label">Image :</label>
                                     <div class="col-md-9">

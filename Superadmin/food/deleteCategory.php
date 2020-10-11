@@ -30,7 +30,7 @@ if (!isset($_REQUEST['c_id'])) {
 	$c_id = $_REQUEST['c_id'];
 
 
-	$sql = "DELETE category , food FROM category INNER JOIN food WHERE category.c_id= food.cart_id and category.c_id = ?";
+	$sql = "DELETE category , food FROM category INNER JOIN food WHERE category.c_id= food.cart_id and category.c_id = ? ";
     $query  = $pdoconn->prepare($sql);
     if ($query->execute([$c_id])) {
 

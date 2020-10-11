@@ -12,7 +12,7 @@ $search="";
 if(isset($_REQUEST['search'])){
     $search=" and name like '%".$_REQUEST['search']."%'or description like '%".$_REQUEST['search']."%'";
 }
-$sql="select c_id,name,description,image from category where category_exixts='1'".$search." LIMIT ".$page1.", 6";
+$sql="select c_id,name,description,image from category where ".$search." LIMIT ".$page1.", 6";
 $result=$conn->query($sql); 
 ?>
 <!DOCTYPE html>
@@ -77,55 +77,8 @@ $result=$conn->query($sql);
         <input class="search" type="text" name="search" placeholder="Search..." id="search">
     </form>
     </div>
-    <div class="col-md-8 mx-auto" style="margin-top:1%;margin-bottom:3%;">
-        <div class="row">
-          <?php
-         if ($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) { 
-					?> 
-          <div class="col-sm-4" style="margin-top:20px">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="inner" style="text-align:center">
-                  <a href="food.php?category=<?php echo $row['c_id'];?>"><img src="image/<?php echo $row['image'];?>"  class="card-img-top"  style="width:400px; height:300px;object-fit: contain;"></a>
-                </div>
-                <h5 class="card-title"><?php echo $row['name'];?></h5>
-                <hr>
-                <div class="card-heading"><?php echo $row['description'];?></div>
-                </div>
-              </div>
-            </div>     
-            <?php
-              } 
-              ?>
-        </div>
-        <?php
-        $result = $conn->query("SELECT * FROM category where category_exixts='exixts'");
-        $count = $result->num_rows;      
-        $a = $count / 9;
-        $a = ceil($a);
-        ?>
-        <ul class="pagination pagination-lg"> 
-          <?php
-          for ($i = 1; $i <= $a; $i++) {?>
-            <li class="page-item"><a class="page-link" href="category.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li> 
-          <?php
-          }
-          ?>
-        </ul>
+ <div id="category"></div>
 
-        <?php
-       } else{?>
-              <div class="row">
-              <div class="container"  style="width:1500px; height:500px;" >
-              <h1 style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                <h1 style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Result....</h1>
-              </div>
-              </div>
-              <?php
-              }?>
-    </div>
-    </div>
     <footer>
         <?php 
           require "navandfooter/footer.php";
@@ -134,3 +87,34 @@ $result=$conn->query($sql);
     
 </body>
 </html>
+<script>
+  $(document).ready(function(){
+
+    load_data(1);
+
+    function load_data(page, query = '')
+    {
+      $.ajax({
+        url:"AjaxCategory.php",
+        method:"POST",
+        data:{page:page, query:query},
+        success:function(data)
+        {
+          $('#category').html(data);
+        }
+      });
+    }
+
+    $(document).on('click', '.page-link', function(){
+      var page = $(this).data('page_number');
+      var query = $('#search').val();
+      load_data(page, query);
+    });
+
+    $('#search').keyup(function(){
+      var query = $('#search').val();
+      load_data(1, query);
+    });
+
+  });
+</script>

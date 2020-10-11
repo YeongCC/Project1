@@ -36,7 +36,11 @@
     $foodImage = upload_food('../../image/food/', $files);
     $price=$_POST['price'];
 
+    if(!empty($categoryImage)){
   $sql="update food set cart_id='$cart_id',nameFood='$nameFood',description='$description',imageFood='$foodImage',price='$price' where f_id='$f_id'";
 	$result=$conn->query($sql);
- 	echo "<script>alert('Congratulations,Update Succesful!!!');window.location.assign('food.php');</script>";
+     echo "<script>alert('Congratulations,Update Succesful!!!');window.location.assign('food.php');</script>";
+    }else{
+        echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('FoodList2.php');</script>";
+      }
 }

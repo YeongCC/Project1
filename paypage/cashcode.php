@@ -19,5 +19,5 @@
    
    $sql = "INSERT into payment(id,order_id, email, Name, PhoneNo, Address,price,time_date,payment_way,status,receive)values('$id','$order_id', '$email', '$Name', '$PhoneNo', '$Address','$price','$time_date','$payment_way','$status','$receive')";
    $result=$conn->query($sql);
-   echo "<script>alert('Thank you for Ordering at FoodTiger! The ordering process is now complete.');window.location.assign('receipt.php');</script>";
+   echo "<script>window.location.assign('doneCash.php');</script>";
 }

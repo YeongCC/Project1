@@ -30,13 +30,15 @@ if (isset($_POST['update'])) {
     $c_id=$_POST['c_id'];
     $name=$_POST['name'];
     $description=$_POST['description'];
-    $category_exixts=$_POST['category_exixts'];
     $files = $_FILES['categoryUpload'];
     $categoryImage = upload_category('../../image/category/', $files);
 
-
-    $sql = "update category set name='$name',description='$description',image='$categoryImage',category_exixts='$category_exixts' where c_id='$c_id'";
+    if(!empty($categoryImage)){
+    $sql = "update category set name='$name',description='$description',image='$categoryImage' where c_id='$c_id'";
     echo "<script>alert('Congratulations,Update Succesful!!!');window.location.assign('category.php');</script>";
     $result = $conn->query($sql);
+}else{
+    echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('CategoryList2.php');</script>";
+  }
 }
 

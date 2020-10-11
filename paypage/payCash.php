@@ -1,10 +1,24 @@
 <?php
-session_start();
-if(!isset($_SESSION['userEmail']))
-{
-	header("location:index.php");
-}
 require 'database/connection.php';
+session_start();
+if (isset($_SESSION['userEmail-foodtiger'])) {
+	$Email = $_SESSION['userEmail-foodtiger'];
+	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 
+	$result= mysqli_query($conn , $query) or die (mysqli_error($conn));
+	if (mysqli_num_rows($result) > 0 ) {
+		$row = mysqli_fetch_array($result);
+		$userid = $row['cus_id'];
+		$Email = $row['Email'];
+		$Name = $row['Name'];
+    $PhoneNo = $row['PhoneNo'];
+    $Address = $row['Address'];
+
+  }}
+if(!isset($_SESSION['userEmail-foodtiger']))
+{
+	header("location:../index.php");
+}
+
 $generateid = uniqid();
 $gtotal = 0;
 foreach ($_SESSION["cart"] as $keys => $values) {
@@ -15,8 +29,8 @@ foreach ($_SESSION["cart"] as $keys => $values) {
   $tax = $total*0.1;
   $gtotal = $gtotal + $total + $tax;
 }
-if (isset($_SESSION['userEmail'])) {
-  $Email = $_SESSION['userEmail'];
+if (isset($_SESSION['userEmail-foodtiger'])) {
+  $Email = $_SESSION['userEmail-foodtiger'];
   $sql = "select * from customer where Email = '$Email'";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -89,7 +103,7 @@ if($result->num_rows>0){
       </div>
     </div>
   
-    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['userEmail']; ?>" style="display: none;" />
+    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['userEmail-foodtiger']; ?>" style="display: none;" />
     <input type="text" class="form-control" name="price" value="<?php echo $gtotal; ?>" style="display: none;" />
     <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
     <input type="text" class="form-control" name="payment_way" value="cash" style="display: none;" />

@@ -35,6 +35,7 @@ if(isset($_GET['id'])){
 		while($row=$result->fetch_assoc()){
 
             $_SESSION['id']=$row['id'];
+            $_SESSION['description']=$row['description'];
             $_SESSION['title']=$row['title'];
             $_SESSION['contain']=$row['contain'];
             $_SESSION['image']=$row['image'];
@@ -70,13 +71,19 @@ if(isset($_GET['id'])){
                     <div class="form-group">
                         <label for="image" class="col-md-3 control-label">Image :</label>
                         <div class="col-md-offset-5 col-md-6">
-                            <img src="<?php echo $_SESSION['image'] ?>" onclick="triggerClick()" id="profileDisplay"
+                            <img src="../image/<?php echo $_SESSION['image'] ?>" onclick="triggerClick()" id="profileDisplay"
                                 style="width: 60%;">
                             <input name="blogUpload" type="file" id="image" onchange="displayImage(this)"
                                 style="display: none;">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="contain" class="col-md-3 control-label">Description :</label>
+                        <div class="col-md-9">
+                            <textarea  name="description" id="description" 
+                                style=" overflow-y: scroll;height: 100px; width:100%;" ><?php echo  $_SESSION['description'] ?></textarea>  
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="contain" class="col-md-3 control-label">Contain :</label>
                         <div class="col-md-9">

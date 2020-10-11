@@ -11,6 +11,7 @@ if(isset($_GET['id'])){
 
             $_SESSION['id']=$row['id'];
             $_SESSION['title']=$row['title'];
+            $_SESSION['description']=$row['description'];
             $_SESSION['contain']=$row['contain'];
             $_SESSION['image']=$row['image'];
             $_SESSION['Name']=$row['Name'];
@@ -88,7 +89,7 @@ if(isset($_GET['id'])){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 blog-left">
-              <a href="blog.php" style="float: left;margin-top: -15px;">back</a>
+              <a href="#"onclick="back()" style="float: left;margin-top: -15px;">back</a>
         <div class="blog-post">
       
 <hr>
@@ -96,6 +97,7 @@ if(isset($_GET['id'])){
         <h2 class="blog-post-title"><?php echo  $_SESSION['title'] ?></h2>
         <p class="blog-post-meta"><?php echo  $_SESSION['time_date'] ?> by <?php echo  $_SESSION['Name'] ?></p>
 <hr>
+      <p><?php echo  $_SESSION['description'] ?></p>
         <p><?php echo  $_SESSION['contain'] ?></p>
       
       
@@ -155,11 +157,14 @@ if(isset($_GET['id'])){
 			</div>
 		</div>
 	</div>
-
-
-
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="container" style="margin-top:3%;">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v8.0&appId=2454460351522244&autoLogAppEvents=1" nonce="BsWdTF0x"></script>
+<div class="fb-comments" data-href="http://localhost/foodtiger-master/customer/blogDetail.php?id=<?php echo $_SESSION['id'];?>" data-numposts="50" data-width="1000"></div>
+</div>
 <!-- ////////////////////////////////////////////////////////////////////// -->
-  
+
 
     <!-- About Us -->
     <div class="container" style="margin-top:3%;">
@@ -206,4 +211,7 @@ if(isset($_GET['id'])){
         }
       });
     }
+    function back() {
+      window.history.back();
+}
   </script>

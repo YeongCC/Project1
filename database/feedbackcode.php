@@ -3,7 +3,7 @@ ob_start();
 require 'connection.php';
 session_start();
 if($_POST){
-$Email = $_SESSION['Email'];
+$Email = $_SESSION['userEmail-foodtiger'];
 $Name = $_SESSION['Name'];
 $phone = $_SESSION['PhoneNo'];
 $feedback = $_POST['feedback'];

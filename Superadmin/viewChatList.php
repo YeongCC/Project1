@@ -25,7 +25,7 @@ $sql = 'SELECT * FROM customer';
 $query  = $pdoconn->prepare($sql);
 $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
-$results_per_page = 6;
+$results_per_page = 5;
 $sql='SELECT * FROM customer';
 $result = mysqli_query($conn, $sql);
 $number_of_results = mysqli_num_rows($result);

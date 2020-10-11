@@ -31,11 +31,13 @@
     $foodImage = upload_food('../../image/food/', $files);
     $price=$_POST['price'];
 
-
+if(!empty($foodImage)){
 	$sql = "INSERT into food(f_id,cart_id,nameFood,description,imageFood,price)values('','$cart_id', '$nameFood', '$description', '$foodImage','$price')";
   $query = mysqli_query($conn,$sql );
 	echo "<script>alert('Congratulations,Insert Succesful!!!'); window.location.assign('food.php');</script>";
-    	
+}else{
+    echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('FoodList.php');</script>";
+  }	 	  	
     } else {
 		echo "<script>alert('Invalid !'); window.location.assign('FoodList.php');</script>";
     }

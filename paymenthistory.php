@@ -2,7 +2,8 @@
 session_start();
 require('database/connection.php');
 require('database/pdo.php');
-if(!isset($_SESSION['userEmail']))
+
+if(!isset($_SESSION['userEmail-foodtiger']))
 {
 	header("location:index.php");
 }
@@ -28,7 +29,7 @@ if(!isset($_SESSION['userEmail']))
 
     <div class="container" style="margin-top:100px;">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-1">
             <h1>View Card Payment History</h1> 
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
@@ -52,7 +53,7 @@ if(!isset($_SESSION['userEmail']))
                   </thead>
                   <tbody>
                   <?php
-                 $currentuser = $_SESSION['userEmail'];
+                 $currentuser = $_SESSION['userEmail-foodtiger'];
 
                 $query = "SELECT * FROM payment WHERE email= '$currentuser' ORDER BY time_date DESC";
                 $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -94,4 +95,6 @@ if(!isset($_SESSION['userEmail']))
                    </div>
 </body>
 </html>
+
+
 

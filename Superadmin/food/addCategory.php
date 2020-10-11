@@ -29,14 +29,15 @@
 	
   	$name = $_POST['name'];
   	$description = $_POST['description'];
-    $category_exixts = $_POST['category_exixts'];
     $files = $_FILES['categoryUpload'];
     $categoryImage = upload_category('../../image/category/', $files);
-
-	$sql = "INSERT into category(c_id, name, description, image,category_exixts)values('', '$name', '$description', '$categoryImage', '$category_exixts')";
+if(!empty($categoryImage)){
+	$sql = "INSERT into category(c_id, name, description, image)values('', '$name', '$description', '$categoryImage')";
   $query = mysqli_query($conn,$sql );
 	echo "<script>alert('Congratulations,Insert Succesful!!!'); window.location.assign('category.php');</script>";
-    	
+}else{
+  echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('CategoryList.php');</script>";
+}	 	
     } else {
 		echo "<script>alert('Invalid !'); window.location.assign('CategoryList.php');</script>";
     }

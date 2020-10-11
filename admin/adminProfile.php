@@ -2,7 +2,8 @@
 include "../database/connection.php";
 session_start();  
 if (isset($_SESSION['adminEmail'])) {
-	$Email = $_SESSION['adminEmail'];
+    $Email = $_SESSION['adminEmail'];
+    $Name  =  $_SESSION['adminName'];
 	$query = "SELECT * FROM admin WHERE Email = '$Email'" ; 
 	$result= mysqli_query($conn , $query) or die (mysqli_error($conn));
 	if (mysqli_num_rows($result) > 0 ) {

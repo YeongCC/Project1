@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['userEmail']))
+if(!isset($_SESSION['userEmail-foodtiger']))
 {
 	header("location:index.php");
 }
@@ -54,7 +54,7 @@ if(isset($_GET['order_id'])){
 
     <div class="container" style="margin-top:100px;">
     <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12 col-md-offset-1">
             <h1>View Orders</h1> 
             <div class="panel panel-default panel-table">
               <div class="panel-heading">

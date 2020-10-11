@@ -53,7 +53,7 @@ session_start();
                                     </div>
                                 </div>
                                 
-                                <input name="category_exixts" id="category_exixts"  value="1" style="display: none;"> 
+                    
                                 
                                 <div class="form-group">
                                     <!-- Button -->                                        
