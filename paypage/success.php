@@ -1,5 +1,5 @@
 <?php
-require 'database/connection.php';
+require 'config/connection.php';
 session_start();
 if (isset($_SESSION['userEmail-foodtiger'])) {
 	$Email = $_SESSION['userEmail-foodtiger'];
@@ -28,7 +28,7 @@ if($result->num_rows>0){
      $_SESSION['id']=$row['id'];
      $_SESSION['order_id']=$row['order_id'];
      $_SESSION['email']=$row['email'];
-     $_SESSION['Name']=$row['Name'];
+     $_SESSION['Name_foodtiger']=$row['Name'];
      $_SESSION['PhoneNo']=$row['PhoneNo'];
      $_SESSION['Address']=$row['Address'];
      $_SESSION['price']=$row['price'];
@@ -39,7 +39,7 @@ if($result->num_rows>0){
   $_SESSION['id']='';
   $_SESSION['order_id']='';
   $_SESSION['email']='';
-  $_SESSION['Name']='';
+  $_SESSION['Name_foodtiger']='';
   $_SESSION['PhoneNo']='';
   $_SESSION['Address']='';
   $_SESSION['price']='';
@@ -77,7 +77,7 @@ if($result->num_rows>0){
             <div class="row">
               <div class="column-33" style="text-align:left;width: 50%;padding: 20px;">
                 <h4>Account  Detail</h4><br/>
-                <h5>Name: <?php echo  $_SESSION['Name']?></h5><br/>
+                <h5>Name: <?php echo  $_SESSION['Name_foodtiger']?></h5><br/>
                 <h5>Phone Number: <?php echo  $_SESSION['PhoneNo']?></h5><br/>
                 <h5>Address: <?php echo  $_SESSION['Address']?></h5>
               </div>

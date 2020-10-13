@@ -2,7 +2,7 @@
 
 <?php
 
-require 'database/connection.php';
+require 'config/connection.php';
 session_start();
 if(!isset($_SESSION['userEmail-foodtiger']))
 {
@@ -25,11 +25,11 @@ $gtotal = 0;
     $result=$conn->query($sql);
      if($result->num_rows>0){
          while($row=$result->fetch_assoc()){
-            $_SESSION['Name']=$row['Name'];
-            $_SESSION['userEmail-foodtiger']=$row['Email'];
-            $_SESSION['PhoneNo']=$row['PhoneNo'];
-            $_SESSION['Address']=$row['Address'];
-            $_SESSION['Password']=$row['Password'];
+            $Name=$row['Name'];
+            $userEmail_foodtiger=$row['Email'];
+            $PhoneNo=$row['PhoneNo'];
+            $Address=$row['Address'];
+            $Password=$row['Password'];
             
       }
     }
@@ -38,16 +38,12 @@ $gtotal = 0;
  $result=$conn->query($sql);
  if($result->num_rows>0){
    while($row=$result->fetch_assoc()){
-      $_SESSION['custorder_id']=$row['custorder_id'];
       $_SESSION['order_id']=$row['order_id'];
-      $_SESSION['email']=$row['email'];
       $_SESSION['time_date']=$row['time_date'];
       
  }
  }else{
-   $_SESSION['custorder_id']='';
    $_SESSION['order_id']='';
-   $_SESSION['email']='';
    $_SESSION['time_date']='';
  }
  
@@ -86,12 +82,12 @@ $gtotal = 0;
        <div class="row">
          <div class="col-md-6 mb-3">
            <label for="firstName">Name</label>
-           <input type="text" name="Name" class="form-control mb-3 StripeElement StripeElement--empty" value="<?php echo $_SESSION['Name']; ?>" required>
+           <input type="text" name="Name" class="form-control mb-3 StripeElement StripeElement--empty" value="<?php echo $Name; ?>" required>
 
          </div>
          <div class="col-md-6 mb-3">
            <label for="lastName">Phone number</label>
-           <input type="text" name="PhoneNo" class="form-control mb-3 " value="<?php echo $_SESSION['PhoneNo']; ?>" required>
+           <input type="text" name="PhoneNo" class="form-control mb-3 " value="<?php echo $PhoneNo; ?>" required>
          </div>
        </div>
 
@@ -102,12 +98,12 @@ $gtotal = 0;
            <div class="input-group-prepend">
             
            </div>
-           <input type="text" name="Address" class="form-control " placeholder="Address"  value="<?php echo $_SESSION['Address']; ?>">             
+           <input type="text" name="Address" class="form-control " placeholder="Address"  value="<?php echo $Address; ?>">             
          </div>
        </div>
    <input type="text" name="payment_way" class="form-control mb-3 StripeElement StripeElement--empty" style="display: none;" value="stripe">    
    <input type="text" name="status" class="form-control mb-3 StripeElement StripeElement--empty"  style="display: none;" value="paid">   
-   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $_SESSION['userEmail-foodtiger']; ?>" style="display: none;"/>
+   <input type="email" name="email" class="form-control StripeElement StripeElement--empty" placeholder="Email"  value="<?php echo $userEmail_foodtiger; ?>" style="display: none;"/>
    <input type="text" name="price" class="form-control" placeholder=""  value="<?php echo "$gtotal"; ?>"  style="display: none;"/> 
    <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
    <input type="text" class="form-control" name="time_date" value="<?php echo  $_SESSION['time_date']; ?>"  style="display: none;"/>

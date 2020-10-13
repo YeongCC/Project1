@@ -1,5 +1,5 @@
 <?php
-require 'database/connection.php';
+require 'config/connection.php';
 session_start();
 if (isset($_SESSION['userEmail-foodtiger'])) {
 	$Email = $_SESSION['userEmail-foodtiger'];

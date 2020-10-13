@@ -70,7 +70,7 @@ $customer->addCustomer($customerData);
 // Transaction Data
 $transactionData = [
   'id' => $charge->id,
-  'customer_id' => $charge->customer,
+  'order_id' => $order_id,
   'product' => $charge->description,
   'amount' => $charge->amount,
   'currency' => $charge->currency,

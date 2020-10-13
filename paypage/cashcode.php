@@ -1,6 +1,6 @@
 <?php    
-    include "database/connection.php";
-    include "database/pdo.php";
+    include "config/connection.php";
+    include "config/pdo.php";
     session_start();
     if(isset($_POST['Pay'])) {
       $id = '-';

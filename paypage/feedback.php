@@ -1,5 +1,5 @@
 <?php
-include "../database/connection.php";
+include "../config/connection.php";
 if (isset($_SESSION['userEmail-foodtiger'])) {
 	$Email = $_SESSION['userEmail-foodtiger'];
 	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 

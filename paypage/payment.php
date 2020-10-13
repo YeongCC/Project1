@@ -1,5 +1,5 @@
 <?php
-include "database/connection.php";
+include "config/connection.php";
 if (isset($_SESSION['userEmail-foodtiger'])) {
 	$Email = $_SESSION['userEmail-foodtiger'];
 	$query = "SELECT * FROM customer WHERE Email = '$Email'" ; 
@@ -91,7 +91,7 @@ if(!isset($_SESSION['userEmail-foodtiger']))
           </div>
           <div style="float: right;display: none;" id="paypal">
           <button type="button" class="close" onclick="closeall()" data-dismiss="modal">&times;</button>
-            <a href="paypal/index.php" class="img-fluid " style="text-decoration:none;color:black;">
+            <a href="paypalpage.php" class="img-fluid " style="text-decoration:none;color:black;">
               <img src=../image/paypal.png alt="CreditImage" class="">
             </a>
           </div>

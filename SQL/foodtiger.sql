@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2020 at 01:25 PM
+-- Generation Time: Oct 13, 2020 at 04:22 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -54,6 +54,7 @@ INSERT INTO `admin` (`ad_id`, `Name`, `Email`, `Password`, `Position`) VALUES
 CREATE TABLE `blog` (
   `id` int(255) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `description` varchar(500) NOT NULL,
   `contain` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) NOT NULL,
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -65,12 +66,12 @@ CREATE TABLE `blog` (
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `contain`, `image`, `time_date`, `Email`, `Name`) VALUES
-(22, 'How does the recommen', '\"Looking back on a childhood filled with events and memories, I find it rather difficult to pick one that leaves me with the fabled \"warm and fuzzy feelings.\" As the daughter of an Air Force major, I had the pleasure of traveling across America in many moving trips. I have visited the monstrous trees of the Sequoia National Forest, stood on the edge of the Grand Canyon and have jumped on the beds at Caesar\'s Palace in Lake Tahoe.\"\r\n\r\n\"The day I picked my dog up from the pound was one of the happiest days of both of our lives. I had gone to the pound just a week earlier with the idea that I would just \"look\" at a puppy. Of course, you can no more just look at those squiggling little faces so filled with hope and joy than you can stop the sun from setting in the evening. I knew within minutes of walking in the door that I would get a puppy… but it wasn\'t until I saw him that I knew I had found my puppy.\"\r\n\r\n\"Looking for houses was supposed to be a fun and exciting process. Unfortunately, none of the ones that we saw seemed to match the specifications that we had established. They were too small, too impersonal, too close to the neighbors. After days of finding nothing even close, we began to wonder: was there really a perfect house out there for us?\"', '../image/blog/western food.jpg', '2020-10-06 23:16:17', 'admin@admin.com', 'Foodtiger'),
-(23, '中国的王帝大传 ', 'deefqefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花', '../image/blog/food5.jpg', '2020-10-06 23:08:32', 'admin@admin.com', 'Foodtiger'),
-(25, 'How does the recommendation system help in our cognitive aspects ', '祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花', '../image/blog/food4.jpg', '2020-10-06 23:05:57', 'admin@admin.com', 'Foodtiger'),
-(26, 'How does the recommendation system help in our cognitive aspects ', '祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花祝你福如加勒比海寿比晕花', '../image/blog/food5.jpg', '2020-10-06 22:46:01', 'admin@admin.com', 'Foodtiger'),
-(28, 'How does the re', '<div class=\"col col-xs-8\">\r\n                    <ul class=\"pagination hidden-xs pull-right\">  \r\n                      <?php\r\n                      for ($page=1;$page<=$number_of_pages;$page++) {\r\n                        echo \' <li><a href=\"category.php?page=\' . $page . \'\">\' . $page . \'</a> </li> \';}\r\n                        ?>                \r\n                    </ul>\r\n                  </div><div class=\"col col-xs-8\">\r\n                    <ul class=\"pagination hidden-xs pull-right\">  \r\n                      <?php\r\n                      for ($page=1;$page<=$number_of_pages;$page++) {\r\n                        echo \' <li><a href=\"category.php?page=\' . $page . \'\">\' . $page . \'</a> </li> \';}\r\n                        ?>                \r\n                    </ul>\r\n                  </div><div class=\"col col-xs-8\">\r\n                    <ul class=\"pagination hidden-xs pull-right\">  \r\n                      <?php\r\n                      for ($page=1;$page<=$number_of_pages;$page++) {\r\n                        echo \' <li><a href=\"category.php?page=\' . $page . \'\">\' . $page . \'</a> </li> \';}\r\n                        ?>                \r\n                    </ul>\r\n                  </div>', '../image/blog/food4.jpg', '2020-10-06 23:15:37', 'admin@admin.com', 'Foodtiger');
+INSERT INTO `blog` (`id`, `title`, `description`, `contain`, `image`, `time_date`, `Email`, `Name`) VALUES
+(29, 'Malay ', '        Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.', 'Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.', '../image/blog/malay food.jpg', '2020-10-09 12:48:19', 'admin@admin.com', 'ewew hahahahfewf'),
+(30, 'Chinese ', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', '../image/blog/chinese food.jpg', '2020-10-09 12:07:15', 'admin@admin.com', 'ewew hahahahfewf'),
+(31, 'Western ', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term \"European\".  ', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term \"European\".  ', '../image/blog/western food.jpg', '2020-10-09 12:07:19', 'admin@admin.com', 'ewew hahahahfewf'),
+(33, '中国的王帝大传 ', '        中国历史上的君主最初被称为后、帝、皇、王、天子等。皇帝称号则始创于秦始皇，他以自己一统海内的功绩为傲，认为自己德兼“三皇”、功过“五帝”，古往今来的统治者无人能及，宜用新的称号来标志自己的尊贵身份，于是创号“皇帝”，自己称“始皇帝”，规定后世称“二世皇帝”、“三世皇帝”，乃至千秋万世；与“皇帝”称号相对应的，秦始皇还创立并推行了一整套中央直接统治地方、加强中央集权、巩固皇帝政治权力的国家机制。这一整套体制在秦朝被民乱和战国诸侯后裔推翻后，被汉朝承袭并加以巩固，并随“皇帝”的称号流传后世。自秦始皇创制“皇帝”称号以来，中国后世王朝的最高君主纷纷以“皇帝”为号；而秦始皇创制的以“皇帝”为最高、最权威统治者的国家体制，也被称为帝制?', '中国历史上在同一时期被公认为“皇帝”正统的只能是一个“大一统”政权的君主，该政权必须统治中国的大部分地区、并取得周围地区名义上的臣服，如此才能被肯定为“正统”。“正统”政权往往被称为“某朝”、“某代”，而不称为“某国”。历史上某些政权统治区域相对较小，其君主也在自己的国内称皇帝，却一般不被二十四史体系认同为真正的“皇帝”，实际仅相当于“国王”，如历史上越南地区的南越国，其开国君主对内称皇帝，对汉称臣。此类政权的称谓仅仅是“某国”，而不能称“某朝代”。在某些大分裂时期，中国没有公认正统的皇帝，如南北朝时与五代十国时期，同时有两个或数个中型王朝并立，这些中型王朝的实力超过了一般的“国”，各自称“皇帝”，并质疑对方的“正统性”，却始终没能实现一统海内的功绩。三国时期时，魏、蜀、吴三国国君也曾相继称帝；然而短暂地并存之后，由西晋完成了统一，成为了继汉朝而来的正统王朝。\r\n\r\n中国历史上最早的正统朝代的标志之一是相传为夏朝大禹制作的九鼎，传至周代，到秦朝末年失传；自中国第一位皇帝秦始皇帝创制皇帝称号以来，正统朝代的标志则变成了始皇帝传国玉玺，然而该玉玺几经失传、后世所谓重新发现者又多是伪作，故而自晋以后已经基本丧失了其标志性地位。\r\n\r\n中国皇帝一直延续到1912年2月12日溥仪退位，至此中国皇帝制结束，共和制建立。中华民国成立后，虽有袁世凯自称中华帝国皇帝、张勋推动辫军复辟、日本在中国东北扶植满洲国之傀儡皇帝溥仪，但都以失败告终。在中国历史上一共出现了83个王朝，共有559个帝王，包括397个帝和162个王。\r\n\r\n历代中国的皇帝中，寿命最长的皇帝为清高宗弘历（乾隆皇帝），享年89岁；寿命最短的皇帝是东汉殇帝刘隆，不满2岁即驾崩。在位时间最长的皇帝是清圣祖玄烨（康熙皇帝），在位近62年[1]；在位时间最短的是金末帝完颜承麟，在位仅半天。\r\n\r\n在中国历史上，仅有一位得到普遍承认的女皇帝，是为唐朝时唐太宗宫人、唐高宗皇后，篡唐建“周”（史称武周），尊号“则天大圣皇帝”，即后世谓“武则天”者，其晚年退位将政权复归于自己的儿子，恢复了唐朝宗室，死后仍以唐高宗皇后的身份合葬于乾陵。唐朝之后虽然有多位太后临朝听政，具有皇帝的实权，但仅是有实无名，未再出现真正登基、享有皇帝称号的女帝政权出现。', '../image/blog/avatar6.png', '2020-10-09 12:20:01', 'admin@admin.com', 'ewew hahahahfewf'),
+(34, 'How does the recommendation system help in our cognitive aspects ', '   r32r', '32r2', '../image/blog/food4.jpg', '2020-10-09 12:53:55', 'admin@admin.com', 'ewew hahahahfewf');
 
 -- --------------------------------------------------------
 
@@ -82,19 +83,18 @@ CREATE TABLE `category` (
   `c_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `image` varchar(500) NOT NULL,
-  `category_exixts` varchar(20) NOT NULL
+  `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`c_id`, `name`, `description`, `image`, `category_exixts`) VALUES
-(2, 'Chinese', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', '../../image/category/chinese food.jpg', '1'),
-(3, 'Western', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term ', '../../image/category/western food.jpg', '1'),
-(4, 'Indian', 'Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations,', '../../image/category/indian food.jpg', '1'),
-(5, 'Korean', 'Korean cuisine is largely based on rice, vegetables, and (at least in the South) meats. Traditional Korean meals are named for the number of side dishes that accompany steam-cooked short-grain rice. Kimchi is served at nearly every meal.', '../../image/category/Korean food.jpg', '1');
+INSERT INTO `category` (`c_id`, `name`, `description`, `image`) VALUES
+(2, 'Chinese', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', '../../image/category/chinese food.jpg'),
+(3, 'Western', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term ', '../../image/category/western food.jpg'),
+(4, 'Indian', 'Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent. Given the diversity in soil, climate, culture, ethnic groups, and occupations,', '../../image/category/indian food.jpg'),
+(5, 'Korean', 'Korean cuisine is largely based on rice, vegetables, and (at least in the South) meats. Traditional Korean meals are named for the number of side dishes that accompany steam-cooked short-grain rice. Kimchi is served at nearly every meal.', '../../image/category/Korean food.jpg');
 
 -- --------------------------------------------------------
 
@@ -111,21 +111,7 @@ CREATE TABLE `chat` (
   `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `chat`
---
 
-INSERT INTO `chat` (`id`, `to_user`, `from_user`, `message`, `time_date`, `status`) VALUES
-(110, 'admin', 'admin@admin.com', 'e', '2020-10-04 08:14:47', 2),
-(111, 'admin', 'admin@admin.com', 'ewew', '2020-10-05 09:23:18', 2),
-(112, 'admin', 'admin@admin.com', 'jm', '2020-10-05 09:23:08', 1),
-(113, 'admin', 'admin@admin.com', 'erre', '2020-10-05 09:48:30', 2),
-(114, 'kohmingseng@gmail.com', 'admin', 'gr', '2020-10-07 11:53:51', 1),
-(115, 'kohmingseng@gmail.com', 'admin', 'ewfwefwe', '2020-10-07 12:21:46', 1),
-(116, 'kohmingseng@gmail.com', 'admin', 'haiya', '2020-10-07 12:22:08', 1),
-(117, 'admin', 'yeong4470@gmail.com', 'dsf', '2020-10-07 12:39:58', 1),
-(118, 'admin', 'admin@awefwedmin.com', 'wfewf', '2020-10-07 12:44:57', 1),
-(119, 'admin', 'admin@awefwedmin.com', 'erg', '2020-10-07 13:08:17', 1);
 
 -- --------------------------------------------------------
 
@@ -166,8 +152,7 @@ INSERT INTO `customer` (`cus_id`, `Name`, `Email`, `PhoneNo`, `Address`, `Passwo
 (3, 'egewge', 'admin@admin.com', '014-7464470', '27edwe', '$2y$10$s94xO95WlK6wBRDEjwSmduF0JzXtBEBtmsYydMt8GNvLvdONgWnfS'),
 (4, 'Jiahuitey', 'jiahuitey852003@hotmail.com', '01110858782', 'No53,Jalan Indah12/12,Taman Bukit Indah,81200 JB', '$2y$10$3joXWrQdw2LPSgCbUv0YzOPWOQaRPuFENZaf4eMkf5klv1vS3N6lu'),
 (51, 'KOH', 'kohmingseng@gmail.com', '01122334567', '81200 Johor Bahru,Johor', '$2y$10$9W0CLS3p61tJoSAlbCfQde2oTDRR8cgl8Q2puGF6qoXJOF5kbMQq2'),
-(52, 'yang che', 'admin@awefwedmin.com', '01473464470', '27edwe', '$2y$10$MIxSVot/AwbvWD.4dICGRupIIXBiySjoOYVVl1p5NcfMcAc67cQbu'),
-(53, '', '', '', '', '$2y$10$gfi3SlBv1el3Iseiv8/8Bu9INH3eFKAclwpzHOyzxE/x/w74F6WpO');
+(52, 'yang che', 'admin@awefwedmin.com', '01473464470', '27edwe', '$2y$10$MIxSVot/AwbvWD.4dICGRupIIXBiySjoOYVVl1p5NcfMcAc67cQbu');
 
 -- --------------------------------------------------------
 
@@ -179,24 +164,9 @@ CREATE TABLE `cus_order` (
   `custorder_id` int(11) NOT NULL,
   `order_id` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `status` varchar(30) NOT NULL,
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cus_order`
---
-
-INSERT INTO `cus_order` (`custorder_id`, `order_id`, `email`, `time_date`) VALUES
-(12, '5f7e7645e3b14', 'yeong4470@gmail.com', '2020-10-08 02:15:34'),
-(13, '5f7e7676a5808', 'yeong4470@gmail.com', '2020-10-08 02:16:23'),
-(14, '5f7e771c88796', 'yeong4470@gmail.com', '2020-10-08 02:19:10'),
-(15, '5f7e772bf179c', 'yeong4470@gmail.com', '2020-10-08 02:19:25'),
-(16, '5f7e77893b441', 'yeong4470@gmail.com', '2020-10-08 02:20:58'),
-(17, '5f7e77aed5040', 'yeong4470@gmail.com', '2020-10-08 02:21:36'),
-(18, '5f7e93b897870', 'yeong4470@gmail.com', '2020-10-08 04:21:14'),
-(19, '5f800d7f90561', 'yeong4470@gmail.com', '2020-10-09 07:13:05'),
-(20, '5f800efab5cb9', 'yeong4470@gmail.com', '2020-10-09 07:19:24'),
-(21, '5f801e19095b9', 'yeong4470@gmail.com', '2020-10-09 08:23:54');
 
 -- --------------------------------------------------------
 
@@ -218,7 +188,8 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `Email`, `Name`, `phone`, `feedback`, `suggestions`) VALUES
-(2, 'yeong4470@gmail.com', 'HandsomeC', '0147464470', 'good', 'reff');
+(2, 'yeong4470@gmail.com', 'HandsomeC', '0147464470', 'good', 'reff'),
+(3, 'admin@admin.com', 'egewge', '014-7464470', 'good', 'thrth');
 
 -- --------------------------------------------------------
 
@@ -268,23 +239,6 @@ CREATE TABLE `orders` (
   `date_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`cust_id`, `order_id`, `foodname`, `price`, `quantity`, `username`, `date_time`) VALUES
-('5f7e7645e3b14', 16, ' Bak kut teh ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:15:34'),
-('5f7e7676a5808', 17, ' Bak kut teh ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:16:23'),
-('5f7e771c88796', 18, ' Bak kut teh ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:19:10'),
-('5f7e772bf179c', 19, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:19:25'),
-('5f7e77893b441', 20, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:20:58'),
-('5f7e77aed5040', 21, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 02:21:36'),
-('5f7e93b897870', 22, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-08 04:21:14'),
-('5f800d7f90561', 23, ' Bak kut teh ', 8, 2, ' yeong4470@gmail.com ', '2020-10-09 07:13:05'),
-('5f800d7f90561', 24, ' Pizza ', 12, 3, ' yeong4470@gmail.com ', '2020-10-09 07:13:05'),
-('5f800efab5cb9', 25, ' Bak kut teh ', 8, 2, ' yeong4470@gmail.com ', '2020-10-09 07:19:24'),
-('5f801e19095b9', 26, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-09 08:23:54');
-
 -- --------------------------------------------------------
 
 --
@@ -305,18 +259,20 @@ CREATE TABLE `payment` (
   `receive` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `payment`
+-- Table structure for table `paypal`
 --
 
-INSERT INTO `payment` (`id`, `order_id`, `email`, `Name`, `PhoneNo`, `Address`, `price`, `time_date`, `payment_way`, `status`, `receive`) VALUES
-(10, '5f7e7676a5808', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-08 02:16:23', 'stripe', 'paid', 'yes'),
-(11, '5f7e771c88796', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-08 02:19:10', 'cash', 'paid', 'yes'),
-(12, '5f7e772bf179c', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-08 02:19:25', 'stripe', 'paid', 'yes'),
-(13, '5f7e77893b441', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-08 02:20:58', 'stripe', 'paid', 'yes'),
-(14, '5f7e93b897870', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-08 04:21:14', 'cash', 'unpaid', 'no'),
-(15, '5f800d7f90561', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 57, '2020-10-09 07:13:05', 'cash', 'unpaid', 'no'),
-(16, '5f800efab5cb9', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 18, '2020-10-09 07:19:24', 'cash', 'unpaid', 'no');
+CREATE TABLE `paypal` (
+  `id` int(11) NOT NULL,
+  `payment_id` varchar(255) NOT NULL,
+  `payer_id` varchar(255) NOT NULL,
+  `amount` float(10,2) NOT NULL,
+  `currency` varchar(255) NOT NULL,
+  `payment_status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -355,22 +311,13 @@ INSERT INTO `requestjob` (`id`, `firstName`, `lastName`, `PhoneNo`, `Email`, `ye
 
 CREATE TABLE `transactions` (
   `id` int(255) NOT NULL,
-  `customer_id` varchar(255) NOT NULL,
+  `order_id` varchar(255) NOT NULL,
   `product` varchar(255) NOT NULL,
   `amount` varchar(255) NOT NULL,
   `currency` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `transactions`
---
-
-INSERT INTO `transactions` (`id`, `customer_id`, `product`, `amount`, `currency`, `status`, `created_at`) VALUES
-(3, 'cus_IA90SaHdf3wHGw', 'Food', '880', 'myr', 'succeeded', '2020-10-08 02:18:49'),
-(4, 'cus_IA91Ske59I8mui', 'Food', '880', 'myr', 'succeeded', '2020-10-08 02:19:37'),
-(5, 'cus_IA92scF6s7zFev', 'Food', '880', 'myr', 'succeeded', '2020-10-08 02:21:10');
 
 --
 -- Indexes for dumped tables
@@ -441,6 +388,12 @@ ALTER TABLE `orders`
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `paypal`
+--
+ALTER TABLE `paypal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -523,6 +476,12 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `paypal`
+--
+ALTER TABLE `paypal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
