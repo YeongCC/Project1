@@ -53,8 +53,6 @@ $_SESSION['curentName'] =$Name ;
         <div class="panel panel-warning">
             <div class="panel-heading">
                 <div class="panel-title">Online Chat --<?php echo $Name?> </div>
-                <div style="float:right; font-size: 85%; position: relative; top:-18px"><a
-                        href="viewChatList.php">Back</a></div>
             </div>
             <div class="panel-body">
                 <div class="my-3 p-3 bg-white rounded shadow-sm">
