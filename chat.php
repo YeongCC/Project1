@@ -14,7 +14,7 @@
 <div style="background-color: white;">
     <input type="text" class="form-control" name="to_user" id="to_user" value="admin" style="display: none;" />
     <input type="text" class="form-control" name="from_user" id="from_user"
-      value="<?php echo $_SESSION['userEmail']; ?>" style="display: none;" />
+      value="<?php echo $_SESSION['userEmail-foodtiger']; ?>" style="display: none;" />
       <div>
     <textarea placeholder="Type message.." name="message" id="message" class="message" style="width:100%;" required></textarea>
 </div>

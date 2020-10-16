@@ -27,7 +27,7 @@ $name=$_SESSION['curentName'];
             </div>
             </div>';
         }
-        else
+        else if($row["status"] == '1')
         {      
       $dynamic_background = 'background-color:#F4FC92;';
       echo '
@@ -38,9 +38,14 @@ $name=$_SESSION['curentName'];
             - <small><em>'.$row['time_date'].'</em></small>
             </div>
             </div>';
-    }
+    }  else 
+    {      
 
-    }else if($row["from_user"] == "admin" && $row['to_user']== $user)
+  echo '';
+}
+
+
+    }else if($row["from_user"] == "admin" && $row['to_user']== $user&&$row["status"] == "1")
 		{   
        $dynamic_background = 'background-color:#FDF29E;';
       echo '<div style="border-bottom:1px #ccc;padding-top:8px; padding-left:8px; padding-right:8px;'.$dynamic_background.'">

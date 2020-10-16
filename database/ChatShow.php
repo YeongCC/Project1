@@ -26,7 +26,7 @@ $currentuser = $_SESSION['userEmail-foodtiger'];
             </div>
             </div>';
         }
-        else
+        else  if($row["status"] == '1')
         {      
       $dynamic_background = 'background-color:#F4FC92;';
       echo '
@@ -38,8 +38,11 @@ $currentuser = $_SESSION['userEmail-foodtiger'];
             </div>
             </div>';
     }
-
-    }else if($row["from_user"] == "admin" && $row['to_user']== $_SESSION['userEmail'])
+    else 
+    {     
+  echo '';
+}
+    }else if($row["from_user"] == "admin" && $row['to_user']== $_SESSION['userEmail-foodtiger']&&$row["status"] == "1")
 		{   
        $dynamic_background = 'background-color:#FDF29E;';
       echo '<div style="border-bottom:1px #ccc;padding-top:8px; padding-left:8px; padding-right:8px;'.$dynamic_background.'">

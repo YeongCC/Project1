@@ -15,6 +15,6 @@ $sql = "UPDATE cus_order
 SET status = 'done' 
 WHERE order_id = '".$_SESSION['order_id']."'";
 $result=$conn->query($sql);
-echo "<script>alert('Thank you for Ordering at FoodTiger! The ordering process is now complete.');window.location.assign('receipt.php');</script>";
+echo "<script>alert('Thank you for Ordering at FoodTiger! The ordering process is now complete.');window.location.assign('success.php');</script>";
 
 ?>
