@@ -38,6 +38,12 @@ if (isset($_SESSION['userEmail-foodtiger'])) {
           require "navandfooter/nav.php";
         ?>
     </header>
+    <?php
+if(isset($_SESSION['userEmail-foodtiger']))
+{
+require "chat.php";
+}    
+      ?>
     <div class="imgcontainer">
       <img src="image/avatar6.png" alt="Avatar" class="avatar">
     </div>

@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
       $_SESSION['Name'] = $Name;
       $_SESSION['Email'] = $Email;
       $_SESSION['Superadmin'] = $row['Email'];
+      $_SESSION['SuperadminName'] = $row['Email'];
       header('location: adminhome.php');
     }
     else {

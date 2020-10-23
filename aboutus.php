@@ -21,7 +21,12 @@ session_start();
   require "navandfooter/nav.php";
   ?>
 </header>
-
+<?php
+if(isset($_SESSION['userEmail-foodtiger']))
+{
+require "chat.php";
+}    
+      ?>
 <body>
   <div class="in1">
     <!-- Carousel -->

@@ -65,7 +65,7 @@ session_start();
                         </div>
                     </div>
                     <input name="Email" value="<?php echo $_SESSION['Email'] ?>" style="display: none;">
-                    <input name="Author" value="<?php echo $_SESSION['SuperadminName'] ?>" style="display: none;">
+                    <input name="Author" value="<?php echo $_SESSION['adminName'] ?>" style="display: none;">
                     <div class="form-group">
                         <!-- Button -->
                         <div class="col-md-offset-4 col-md-6">

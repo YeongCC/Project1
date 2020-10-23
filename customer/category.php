@@ -33,6 +33,7 @@ $result=$conn->query($sql);
           require "navandfooter/nav.php";
         ?>           
 </header>
+
 <body>
     <div class="in1">
         <!-- Carousel -->

@@ -22,6 +22,7 @@
     <a href="view.php" class="btn  button" class=".lol" >Customer activities</a>
     <a href="food/admincontrolside.php" class="btn  button" class=".lol" >Food Management</a>
     <a href="adminProfile.php" class="btn  button" class=".lol" >Admin Profile</a>
+    <a href="Blogmanage.php" class="btn  button" class=".lol" >Blog Management</a>
     <p><a href="adminlognout.php"  onclick="return confirm('Are you sure?')">Logout</a></p>
 
     </form>

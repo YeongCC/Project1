@@ -8,7 +8,7 @@
 
     public function addTransaction($data) {
       // Prepare Query
-      $this->db->query('INSERT INTO transactions (id, order_id, product, amount, currency, status) VALUES(:id, :order_id, :product, :amount, :currency, :status)');
+      $this->db->query('INSERT INTO stripe (id, order_id, product, amount, currency, status) VALUES(:id, :order_id, :product, :amount, :currency, :status)');
 
       // Bind Values
       $this->db->bind(':id', $data['id']);
@@ -27,7 +27,7 @@
     }
 
     public function getTransactions() {
-      $this->db->query('SELECT * FROM transactions ORDER BY created_at DESC');
+      $this->db->query('SELECT * FROM stripe ORDER BY created_at DESC');
 
       $results = $this->db->resultset();
 

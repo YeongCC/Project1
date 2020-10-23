@@ -30,7 +30,7 @@
  if(isset($_POST['insert'])) {
 	
     $Email = $_POST['Email'];
-    $Name = $_POST['Name'];
+    $Author = $_POST['Author'];
     $description = addslashes($_POST['description']);
     $contain = addslashes($_POST['contain']);
     $title = $_POST['title'];
@@ -38,11 +38,11 @@
     $blogImage = upload_blog('../image/blog/', $files);
 
     if(!empty($blogImage)){
-	$sql="INSERT INTO `blog`(`id`, `title`,`description`,`contain`, `image`, `Email`, `Name` ) VALUES ('-','$title ',' $description','$contain','$blogImage','$Email','$Name')";
+	$sql="INSERT INTO `blog`(`id`, `title`,`description`,`contain`, `image`, `Email`, `Author` ) VALUES ('-','$title ',' $description','$contain','$blogImage','$Email','$Author')";
     $query = mysqli_query($conn,$sql );
-	echo "<script>alert('Congratulations,Insert Succesful!!!'); window.history.back();</script>";
+	echo "<script>alert('Congratulations,Insert Succesful!!!');window.location.assign('../Superadmin/Blogmanage.php'); </script>";
 }else{
-    echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('../Superadmin/insertBlog.php');</script>";
+    echo "<script>alert('Invalid !!! Please put picture! '); window.history.back();</script>";
 }	
     } else {
 		echo "<script>alert('Invalid !'); window.location.assign('../Superadmin/insertBlog.php');</script>";

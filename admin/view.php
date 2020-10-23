@@ -22,6 +22,7 @@
     <a href="viewPayhistory.php" class="btn  button" class=".lol" >Payment List</a>
     <a href="viewhistoryOrder.php" class="btn  button" class=".lol" >Order List</a>
     <a href="viewfeedback.php" class="btn  button" class=".lol" >Feedback</a>
+    <a href="viewChatList.php" class="btn  button" class=".lol" >View Chatting List</a>
     
  
     <a href="adminhome.php" class="btn  button" class=".lol" >Back</a>

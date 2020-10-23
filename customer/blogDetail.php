@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
             $_SESSION['description']=$row['description'];
             $_SESSION['contain']=$row['contain'];
             $_SESSION['image']=$row['image'];
-            $_SESSION['Name']=$row['Name'];
+            $_SESSION['Author']=$row['Author'];
             $_SESSION['time_date']=$row['time_date'];
  
 		}
@@ -95,7 +95,7 @@ if(isset($_GET['id'])){
 <hr>
         <img src="<?php echo $_SESSION['image'];?>" style="width:max-content; height:200px;object-fit: contain;" >
         <h2 class="blog-post-title"><?php echo  $_SESSION['title'] ?></h2>
-        <p class="blog-post-meta"><?php echo  $_SESSION['time_date'] ?> by <?php echo  $_SESSION['Name'] ?></p>
+        <p class="blog-post-meta"><?php echo  $_SESSION['time_date'] ?> by <?php echo  $_SESSION['Author'] ?></p>
 <hr>
       <p><?php echo  $_SESSION['description'] ?></p>
         <p><?php echo  $_SESSION['contain'] ?></p>

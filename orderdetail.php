@@ -51,7 +51,12 @@ if(isset($_GET['order_id'])){
           require "navandfooter/nav.php";
         ?>        
     </header>
-
+    <?php
+if(isset($_SESSION['userEmail-foodtiger']))
+{
+require "chat.php";
+}    
+      ?>
     <div class="container" style="margin-top:100px;">
     <div class="row">
     <div class="col-md-12 col-md-offset-1">

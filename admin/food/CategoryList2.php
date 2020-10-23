@@ -38,9 +38,7 @@ if(isset($_GET['c_id'])){
             $_SESSION['c_id']=$row['c_id'];
             $_SESSION['name']=$row['name'];
             $_SESSION['description']=$row['description'];
-            $_SESSION['image']=$row['image'];
-            $_SESSION['category_exixts']=$row['category_exixts'];
- 
+            $_SESSION['image']=$row['image']; 
 		}
 	}
 }
