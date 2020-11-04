@@ -68,7 +68,19 @@ if(isset($_GET['f_id'])){
                                         <input type="text" class="form-control"  name="nameFood" id="nameFood" value="<?php echo  $_SESSION['nameFood']; ?>">
                                     </div>
                                 </div>
-                               
+                                <div class="form-group">
+                                    <label for="image" class="col-md-3 control-label">Image :</label>
+                                    <div class="col-md-9">
+                                   
+                                   <img src="<?php if (isset($_GET['f_id'])){echo $_SESSION['image']; }?>"  onclick="triggerClick()" id="profileDisplay">
+                                    
+                                 
+                                    <input name="foodUpload" type="file"  id="image"  onchange="displayImage(this)" style="display: none;">  
+                                    <button type="submit" name="foodpictureSave" class="btn btn-info "
+                                onclick="return confirm('Are you sure want to save?b')">Save</button>
+                                    </div>
+                                    
+                                </div>
                                 
                                     
                                 <div class="form-group">
@@ -84,16 +96,7 @@ if(isset($_GET['f_id'])){
                                         <input type="text" class="form-control" name="price"  id="price" value="<?php echo $_SESSION['price']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="image" class="col-md-3 control-label">Image :</label>
-                                    <div class="col-md-9">
-                                   
-                                   <img src="<?php if (isset($_GET['f_id'])){echo $_SESSION['image']; }?>"  onclick="triggerClick()" id="profileDisplay">
-                                    
-                                 
-                                    <input name="foodUpload" type="file"  id="image"  onchange="displayImage(this)" style="display: none;">  
-                                    </div>
-                                </div>
+                          
                                  
                                 
                                 <div class="form-group">

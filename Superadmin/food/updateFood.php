@@ -32,15 +32,21 @@
     $cart_id=$_POST['cart_id'];
     $nameFood=$_POST['nameFood'];
     $description=$_POST['description'];
-    $files = $_FILES['foodUpload'];
-    $foodImage = upload_food('../../image/food/', $files);
     $price=$_POST['price'];
 
-    if(!empty($categoryImage)){
-  $sql="update food set cart_id='$cart_id',nameFood='$nameFood',description='$description',imageFood='$foodImage',price='$price' where f_id='$f_id'";
+  $sql="update food set cart_id='$cart_id',nameFood='$nameFood',description='$description',price='$price' where f_id='$f_id'";
 	$result=$conn->query($sql);
      echo "<script>alert('Congratulations,Update Succesful!!!');window.location.assign('food.php');</script>";
-    }else{
-        echo "<script>alert('Invalid !!! Please put picture! '); window.location.assign('FoodList2.php');</script>";
-      }
+   
 }
+
+
+if(isset($_POST['foodpictureSave'])) {
+    $f_id = $_POST['f_id'];
+    $files = $_FILES['foodUpload'];
+    $foodImage = upload_food('../../image/food/', $files);
+
+    $sql="update food set `imageFood`= '$foodImage' where f_id='$f_id'";
+	$result=$conn->query($sql);
+    echo "<script>alert('Congratulations,Update Succesful!!!');window.history.back();</script>";
+    } 

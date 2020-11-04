@@ -100,7 +100,7 @@
 
 
         <label for="Username">Username:</label>
-        <input type="text" class="form-control" id="name" placeholder="Name" name="name" minlength="4" maxlength="8">
+        <input type="text" class="form-control" id="name" placeholder="Name" name="name" >
         <span id="nameLen" style="color:red;display:none">The Username field needs to be at least 2 characters</span>
         <span id="namefield" style="color:red;display:none">Fields are required</span>
 

@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
   $Password = $_POST['Password'];
   mysqli_real_escape_string($conn, $Email);
   mysqli_real_escape_string($conn, $Password);
-$query = "SELECT * FROM admin WHERE Email = '$Email'";
+$query = "SELECT * FROM admin WHERE Email = '$Email'AND Position ='Super Admin'";
 $result = mysqli_query($conn , $query) or die (mysqli_error($conn));
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_array($result)) {
