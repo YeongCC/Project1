@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2020 at 04:22 AM
+-- Generation Time: Nov 05, 2020 at 03:29 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -42,8 +42,7 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`ad_id`, `Name`, `Email`, `Password`, `Position`) VALUES
 (1, 'Foodtiger', 'admin@admin.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Super Admin'),
 (2, 'HandsomeC', 'yeong4470@gmail.com', '$2y$10$bLnd7aj3muaETBOKSFJ/kuRyn2X2I3bsyL74v.pjIIoaI0JKIZ9g.', 'Admin'),
-(3, 'fdfdgr', '123@123gmail.com', '$2y$10$EXlUvS9HVIUmXRXgSqY1KOBryV41rgJbZ7R7PzvSi/TWXYYLaqunC', 'Deliver Man'),
-(6, 'ewew hahahahfewf', 'admin@admin.com', '$2y$10$hsnlY8iBZ2ADuFVOAS3Em.Et1yA6VZqlMKOWXOx8QCqbW1XrR9xsK', 'Deliver Man');
+(3, 'fdfdgr', '123@123gmail.com', '$2y$10$EXlUvS9HVIUmXRXgSqY1KOBryV41rgJbZ7R7PzvSi/TWXYYLaqunC', 'Deliver Man');
 
 -- --------------------------------------------------------
 
@@ -59,19 +58,20 @@ CREATE TABLE `blog` (
   `image` varchar(255) NOT NULL,
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Email` varchar(255) NOT NULL,
-  `Name` varchar(255) CHARACTER SET latin1 NOT NULL
+  `Author` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `description`, `contain`, `image`, `time_date`, `Email`, `Name`) VALUES
-(29, 'Malay ', '        Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.', 'Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.', '../image/blog/malay food.jpg', '2020-10-09 12:48:19', 'admin@admin.com', 'ewew hahahahfewf'),
+INSERT INTO `blog` (`id`, `title`, `description`, `contain`, `image`, `time_date`, `Email`, `Author`) VALUES
+(29, 'Malay ', '                            Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.', 'Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia , Singapore, Brunei and Southern Thailand. Malay cooking also makes plentiful use of lemongrass.fggf', '../image/blog/malay food.jpg', '2020-10-23 03:44:51', 'admin@admin.com', 'Foodtiger'),
 (30, 'Chinese ', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', 'Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions of China, as well as from Overseas Chinese who have settled in other parts of the world.', '../image/blog/chinese food.jpg', '2020-10-09 12:07:15', 'admin@admin.com', 'ewew hahahahfewf'),
 (31, 'Western ', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term \"European\".  ', 'European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term \"European\".  ', '../image/blog/western food.jpg', '2020-10-09 12:07:19', 'admin@admin.com', 'ewew hahahahfewf'),
-(33, '中国的王帝大传 ', '        中国历史上的君主最初被称为后、帝、皇、王、天子等。皇帝称号则始创于秦始皇，他以自己一统海内的功绩为傲，认为自己德兼“三皇”、功过“五帝”，古往今来的统治者无人能及，宜用新的称号来标志自己的尊贵身份，于是创号“皇帝”，自己称“始皇帝”，规定后世称“二世皇帝”、“三世皇帝”，乃至千秋万世；与“皇帝”称号相对应的，秦始皇还创立并推行了一整套中央直接统治地方、加强中央集权、巩固皇帝政治权力的国家机制。这一整套体制在秦朝被民乱和战国诸侯后裔推翻后，被汉朝承袭并加以巩固，并随“皇帝”的称号流传后世。自秦始皇创制“皇帝”称号以来，中国后世王朝的最高君主纷纷以“皇帝”为号；而秦始皇创制的以“皇帝”为最高、最权威统治者的国家体制，也被称为帝制?', '中国历史上在同一时期被公认为“皇帝”正统的只能是一个“大一统”政权的君主，该政权必须统治中国的大部分地区、并取得周围地区名义上的臣服，如此才能被肯定为“正统”。“正统”政权往往被称为“某朝”、“某代”，而不称为“某国”。历史上某些政权统治区域相对较小，其君主也在自己的国内称皇帝，却一般不被二十四史体系认同为真正的“皇帝”，实际仅相当于“国王”，如历史上越南地区的南越国，其开国君主对内称皇帝，对汉称臣。此类政权的称谓仅仅是“某国”，而不能称“某朝代”。在某些大分裂时期，中国没有公认正统的皇帝，如南北朝时与五代十国时期，同时有两个或数个中型王朝并立，这些中型王朝的实力超过了一般的“国”，各自称“皇帝”，并质疑对方的“正统性”，却始终没能实现一统海内的功绩。三国时期时，魏、蜀、吴三国国君也曾相继称帝；然而短暂地并存之后，由西晋完成了统一，成为了继汉朝而来的正统王朝。\r\n\r\n中国历史上最早的正统朝代的标志之一是相传为夏朝大禹制作的九鼎，传至周代，到秦朝末年失传；自中国第一位皇帝秦始皇帝创制皇帝称号以来，正统朝代的标志则变成了始皇帝传国玉玺，然而该玉玺几经失传、后世所谓重新发现者又多是伪作，故而自晋以后已经基本丧失了其标志性地位。\r\n\r\n中国皇帝一直延续到1912年2月12日溥仪退位，至此中国皇帝制结束，共和制建立。中华民国成立后，虽有袁世凯自称中华帝国皇帝、张勋推动辫军复辟、日本在中国东北扶植满洲国之傀儡皇帝溥仪，但都以失败告终。在中国历史上一共出现了83个王朝，共有559个帝王，包括397个帝和162个王。\r\n\r\n历代中国的皇帝中，寿命最长的皇帝为清高宗弘历（乾隆皇帝），享年89岁；寿命最短的皇帝是东汉殇帝刘隆，不满2岁即驾崩。在位时间最长的皇帝是清圣祖玄烨（康熙皇帝），在位近62年[1]；在位时间最短的是金末帝完颜承麟，在位仅半天。\r\n\r\n在中国历史上，仅有一位得到普遍承认的女皇帝，是为唐朝时唐太宗宫人、唐高宗皇后，篡唐建“周”（史称武周），尊号“则天大圣皇帝”，即后世谓“武则天”者，其晚年退位将政权复归于自己的儿子，恢复了唐朝宗室，死后仍以唐高宗皇后的身份合葬于乾陵。唐朝之后虽然有多位太后临朝听政，具有皇帝的实权，但仅是有实无名，未再出现真正登基、享有皇帝称号的女帝政权出现。', '../image/blog/avatar6.png', '2020-10-09 12:20:01', 'admin@admin.com', 'ewew hahahahfewf'),
-(34, 'How does the recommendation system help in our cognitive aspects ', '   r32r', '32r2', '../image/blog/food4.jpg', '2020-10-09 12:53:55', 'admin@admin.com', 'ewew hahahahfewf');
+(33, '中国的王帝大传 ', '              中国历史上的君主最初被称为后、帝、皇、王、天子等。皇帝称号则始创于秦始皇，他以自己一统海内的功绩为傲，认为自己德兼“三皇”、功过“五帝”，古往今来的统治者无人能及，宜用新的称号来标志自己的尊贵身份，于是创号“皇帝”，自己称“始皇帝”，规定后世称“二世皇帝”、“三世皇帝”，乃至千秋万世；与“皇帝”称号相对应的，秦始皇还创立并推行了一整套中央直接统治地方、加强中央集权、巩固皇帝政治权力的国家机制。这一整套体制在秦朝被民乱和战国诸侯后裔推翻后，被汉朝承袭并加以巩固，并随“皇帝”的称号流传后世。自秦始皇创制“皇帝”称号以来，中国后世王朝的最高君主纷纷以“皇帝”为号；而秦始皇创制的以“皇帝”为最高、最权威统治者的国家体制，也被称为帝制?adm', '中国历史上在同一时期被公认为“皇帝”正统的只能是一个“大一统”政权的君主，该政权必须统治中国的大部分地区、并取得周围地区名义上的臣服，如此才能被肯定为“正统”。“正统”政权往往被称为“某朝”、“某代”，而不称为“某国”。历史上某些政权统治区域相对较小，其君主也在自己的国内称皇帝，却一般不被二十四史体系认同为真正的“皇帝”，实际仅相当于“国王”，如历史上越南地区的南越国，其开国君主对内称皇帝，对汉称臣。此类政权的称谓仅仅是“某国”，而不能称“某朝代”。在某些大分裂时期，中国没有公认正统的皇帝，如南北朝时与五代十国时期，同时有两个或数个中型王朝并立，这些中型王朝的实力超过了一般的“国”，各自称“皇帝”，并质疑对方的“正统性”，却始终没能实现一统海内的功绩。三国时期时，魏、蜀、吴三国国君也曾相继称帝；然而短暂地并存之后，由西晋完成了统一，成为了继汉朝而来的正统王朝。\r\n\r\n中国历史上最早的正统朝代的标志之一是相传为夏朝大禹制作的九鼎，传至周代，到秦朝末年失传；自中国第一位皇帝秦始皇帝创制皇帝称号以来，正统朝代的标志则变成了始皇帝传国玉玺，然而该玉玺几经失传、后世所谓重新发现者又多是伪作，故而自晋以后已经基本丧失了其标志性地位。\r\n\r\n中国皇帝一直延续到1912年2月12日溥仪退位，至此中国皇帝制结束，共和制建立。中华民国成立后，虽有袁世凯自称中华帝国皇帝、张勋推动辫军复辟、日本在中国东北扶植满洲国之傀儡皇帝溥仪，但都以失败告终。在中国历史上一共出现了83个王朝，共有559个帝王，包括397个帝和162个王。\r\n\r\n历代中国的皇帝中，寿命最长的皇帝为清高宗弘历（乾隆皇帝），享年89岁；寿命最短的皇帝是东汉殇帝刘隆，不满2岁即驾崩。在位时间最长的皇帝是清圣祖玄烨（康熙皇帝），在位近62年[1]；在位时间最短的是金末帝完颜承麟，在位仅半天。\r\n\r\n在中国历史上，仅有一位得到普遍承认的女皇帝，是为唐朝时唐太宗宫人、唐高宗皇后，篡唐建“周”（史称武周），尊号“则天大圣皇帝”，即后世谓“武则天”者，其晚年退位将政权复归于自己的儿子，恢复了唐朝宗室，死后仍以唐高宗皇后的身份合葬于乾陵。唐朝之后虽然有多位太后临朝听政，具有皇帝的实权，但仅是有实无名，未再出现真正登基、享有皇帝称号的女帝政权出现。', '../image/blog/avatar6.png', '2020-11-04 12:14:15', 'yeong4470@gmail.com', 'ewew hahahahfewf'),
+(34, 'How does the recommendation system help in our cognitive aspects ', '   r32r', '32r2', '../image/blog/food4.jpg', '2020-10-09 12:53:55', 'admin@admin.com', 'ewew hahahahfewf'),
+(40, 'How does the recommendation system help in our cognitive aspects ', ' ecfer', 'wecfwe', '../image/blog/chinese food.jpg', '2020-10-23 04:10:51', 'yeong4470@gmail.com', 'admin@admin.com');
 
 -- --------------------------------------------------------
 
@@ -111,21 +111,23 @@ CREATE TABLE `chat` (
   `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-
--- --------------------------------------------------------
-
 --
--- Table structure for table `comment`
+-- Dumping data for table `chat`
 --
 
-CREATE TABLE `comment` (
-  `id` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL,
-  `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `chat` (`id`, `to_user`, `from_user`, `message`, `time_date`, `status`) VALUES
+(41, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Uh', '2020-10-16 08:40:01', 1),
+(42, 'admin', 'yeong4470@gmail.com', 'sd', '2020-10-23 04:10:30', 3),
+(43, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Ijj', '2020-10-16 08:40:42', 1),
+(44, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Gh', '2020-10-16 08:42:03', 1),
+(45, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Uj', '2020-10-16 08:42:08', 1),
+(46, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Hhj', '2020-10-16 08:42:23', 1),
+(47, 'admin', 'yeong4470@gmail.com', 'err', '2020-10-23 04:10:30', 3),
+(48, 'admin', '<br /><b>Notice</b>:  Undefined index: userEmail in <b>D:Codingxampphtdocsfoodtiger-masterchat.php</b> on line <b>17</b><br />', 'Hgh', '2020-10-16 08:44:35', 1),
+(49, 'admin', 'yeong4470@gmail.com', 'erg', '2020-10-23 04:10:30', 3),
+(50, 'admin', 'sohai4470@gmail.com', 'Hhh', '2020-10-16 08:45:39', 3),
+(51, 'sohai4470@gmail.com', 'admin', 'ewfe', '2020-10-16 08:45:39', 3),
+(52, 'sohai4470@gmail.com', 'admin', 'wef', '2020-10-16 08:45:39', 3);
 
 -- --------------------------------------------------------
 
@@ -151,8 +153,8 @@ INSERT INTO `customer` (`cus_id`, `Name`, `Email`, `PhoneNo`, `Address`, `Passwo
 (2, 'qefewf', 'grwg@rfver.com', '0147464470', '27edweewfef', '$2y$10$Nzh2jASFeCUJobmfYgweX.kaa1jneALLvHX6AVSeWwSWipmH1H3im'),
 (3, 'egewge', 'admin@admin.com', '014-7464470', '27edwe', '$2y$10$s94xO95WlK6wBRDEjwSmduF0JzXtBEBtmsYydMt8GNvLvdONgWnfS'),
 (4, 'Jiahuitey', 'jiahuitey852003@hotmail.com', '01110858782', 'No53,Jalan Indah12/12,Taman Bukit Indah,81200 JB', '$2y$10$3joXWrQdw2LPSgCbUv0YzOPWOQaRPuFENZaf4eMkf5klv1vS3N6lu'),
-(51, 'KOH', 'kohmingseng@gmail.com', '01122334567', '81200 Johor Bahru,Johor', '$2y$10$9W0CLS3p61tJoSAlbCfQde2oTDRR8cgl8Q2puGF6qoXJOF5kbMQq2'),
-(52, 'yang che', 'admin@awefwedmin.com', '01473464470', '27edwe', '$2y$10$MIxSVot/AwbvWD.4dICGRupIIXBiySjoOYVVl1p5NcfMcAc67cQbu');
+(54, 'qwertylim', 'lkyj222@gmail.ocm', '01111481639j', '11,lembing123', '$2y$10$KPXXqip8m.WMk8D3ohOcouq16ktcPe8M0P4oITbErHK.Tr5tpYj7G'),
+(57, 'Yeong Chee Chiew', 'admin@adrrrmin.com', '0147464470', '27edwe', '$2y$10$HnQCh1ypjh5qFM322Y..BubRjByDsp0EK1YVVfHRSrX.wcP8BixGe');
 
 -- --------------------------------------------------------
 
@@ -167,6 +169,21 @@ CREATE TABLE `cus_order` (
   `status` varchar(30) NOT NULL,
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cus_order`
+--
+
+INSERT INTO `cus_order` (`custorder_id`, `order_id`, `email`, `status`, `time_date`) VALUES
+(1, '5f856567a74b3', 'yeong4470@gmail.com', 'done', '2020-10-13 08:29:56'),
+(2, '5f89399b7f5e0', 'yeong4470@gmail.com', 'done', '2020-10-16 06:11:45'),
+(3, '5f9233fa595cc', 'yeong4470@gmail.com', 'done', '2020-10-23 01:38:19'),
+(4, '5fa360ad8dceb', 'yeong4470@gmail.com', 'done', '2020-11-05 02:17:33'),
+(5, '5fa360c9b90b7', 'yeong4470@gmail.com', 'done', '2020-11-05 02:19:46'),
+(6, '5fa3614a9882b', 'yeong4470@gmail.com', 'done', '2020-11-05 02:21:43'),
+(7, '5fa3614a9882b', 'yeong4470@gmail.com', 'done', '2020-11-05 02:21:43'),
+(8, '5fa361bfc1da1', 'yeong4470@gmail.com', 'done', '2020-11-05 02:21:57'),
+(9, '5fa361d717e7b', 'yeong4470@gmail.com', 'done', '2020-11-05 02:22:31');
 
 -- --------------------------------------------------------
 
@@ -211,7 +228,7 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`f_id`, `cart_id`, `nameFood`, `description`, `imageFood`, `price`) VALUES
-(5, 2, 'Char kway teow', 'Char kway teow  is a popular noodle dish from Maritime Southeast Asia, notably in Indonesia, Malaysia, Singapore, and Brunei. In Hokkien, Char means â€œstir-friedâ€ and kway teow refers to flat rice noodles. The dish is considered a national favourite in', '../../image/food/char kway teow.jpg', 6),
+(5, 2, 'Char kway teowv', 'Char kway teow  is a popular noodle dish from Maritime Southeast Asia, notably in Indonesia, Malaysia, Singapore, and Brunei. In Hokkien, Char means â€œstir-friedâ€ and kway teow refers to flat rice noodles. The dish is considered a national favourite in', '../../image/food/bibimbap.jpg', 20),
 (6, 2, 'Bak kut teh', 'Bak kut teh is a pork rib dish cooked in broth popularly served in Malaysia and Singapore where there is a predominant Hoklo and Teochew community, and also in neighbouring areas like Indonesia in Riau Islands and Southern Thailand.', '../../image/food/Bak Kut Teh.jpg', 8),
 (8, 3, 'Pizza', 'Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients', '../../image/food/pizza.jpg', 12),
 (9, 3, 'Burger', 'Burger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled. ... A hamburger topped with cheese is called a cheeseburger', '../../image/food/burger.jpg', 8),
@@ -239,6 +256,20 @@ CREATE TABLE `orders` (
   `date_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`cust_id`, `order_id`, `foodname`, `price`, `quantity`, `username`, `date_time`) VALUES
+('5f856567a74b3', 1, ' Bak kut teh ', 8, 4, ' yeong4470@gmail.com ', '2020-10-13 08:29:29'),
+('5f89399b7f5e0', 2, ' Bak kut teh ', 8, 1, ' yeong4470@gmail.com ', '2020-10-16 06:11:40'),
+('5f9233fa595cc', 3, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-10-23 01:38:03'),
+('5fa360ad8dceb', 4, ' Maggi goreng ', 6, 1, '  ', '2020-11-05 02:17:19'),
+('5fa360c9b90b7', 5, ' Burger ', 8, 1, '  ', '2020-11-05 02:17:47'),
+('5fa3614a9882b', 6, ' Bak kut teh ', 8, 1, ' yeong4470@gmail.com ', '2020-11-05 02:21:39'),
+('5fa361bfc1da1', 7, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-11-05 02:21:53'),
+('5fa361d717e7b', 8, ' Burger ', 8, 1, ' yeong4470@gmail.com ', '2020-11-05 02:22:16');
+
 -- --------------------------------------------------------
 
 --
@@ -258,6 +289,20 @@ CREATE TABLE `payment` (
   `status` varchar(255) NOT NULL,
   `receive` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `order_id`, `email`, `Name`, `PhoneNo`, `Address`, `price`, `time_date`, `payment_way`, `status`, `receive`) VALUES
+(1, '5f856567a74b3', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 35, '2020-10-13 08:29:29', 'cash', 'unpaid', 'no'),
+(2, '5f89399b7f5e0', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-16 06:11:40', 'cash', 'unpaid', 'no'),
+(3, '5f9233fa595cc', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-10-23 01:38:03', 'stripe', 'paid', 'no'),
+(4, '5fa360ad8dceb', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 7, '2020-11-05 02:17:19', 'stripe', 'paid', 'no'),
+(5, '5fa360c9b90b7', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-11-05 02:17:47', 'cash', 'unpaid', 'no'),
+(6, '5fa3614a9882b', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-11-05 02:21:39', 'cash', 'unpaid', 'no'),
+(7, '5fa361bfc1da1', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-11-05 02:21:53', 'cash', 'unpaid', 'no'),
+(8, '5fa361d717e7b', 'yeong4470@gmail.com', 'HandsomeC', '0147464470', '27,jalan indah', 9, '2020-11-05 02:22:16', 'stripe', 'paid', 'no');
 
 -- --------------------------------------------------------
 
@@ -306,10 +351,10 @@ INSERT INTO `requestjob` (`id`, `firstName`, `lastName`, `PhoneNo`, `Email`, `ye
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
+-- Table structure for table `stripe`
 --
 
-CREATE TABLE `transactions` (
+CREATE TABLE `stripe` (
   `id` int(255) NOT NULL,
   `order_id` varchar(255) NOT NULL,
   `product` varchar(255) NOT NULL,
@@ -318,6 +363,15 @@ CREATE TABLE `transactions` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stripe`
+--
+
+INSERT INTO `stripe` (`id`, `order_id`, `product`, `amount`, `currency`, `status`, `created_at`) VALUES
+(1, '5f9233fa595cc', 'Food', '880', 'myr', 'succeeded', '2020-10-23 01:38:19'),
+(2, '5fa360ad8dceb', 'Food', '660', 'myr', 'succeeded', '2020-11-05 02:17:33'),
+(3, '5fa361d717e7b', 'Food', '880', 'myr', 'succeeded', '2020-11-05 02:22:31');
 
 --
 -- Indexes for dumped tables
@@ -345,12 +399,6 @@ ALTER TABLE `category`
 -- Indexes for table `chat`
 --
 ALTER TABLE `chat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `comment`
---
-ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -403,9 +451,9 @@ ALTER TABLE `requestjob`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transactions`
+-- Indexes for table `stripe`
 --
-ALTER TABLE `transactions`
+ALTER TABLE `stripe`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -416,85 +464,79 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ad_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `ad_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT for table `comment`
---
-ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `cus_order`
 --
 ALTER TABLE `cus_order`
-  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `paypal`
 --
 ALTER TABLE `paypal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `requestjob`
 --
 ALTER TABLE `requestjob`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `transactions`
+-- AUTO_INCREMENT for table `stripe`
 --
-ALTER TABLE `transactions`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `stripe`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
