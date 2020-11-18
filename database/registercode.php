@@ -12,8 +12,9 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 		$phoneNO=$_POST['phoneNO'];
 		$address=$_POST['address'];
 		$password=$_POST['password'];
-		$password = password_hash("$password" , PASSWORD_DEFAULT);
-
+		$Password = password_hash("$password" , PASSWORD_DEFAULT);
+		$_SESSION['autoLoginEmail']=$email;
+		$_SESSION['autoLoginPassword']=$password;
 		$duplicate=mysqli_query($conn,"select * from customer where Email='$email'");
 		if (mysqli_num_rows($duplicate)>0)
 		{
@@ -21,7 +22,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 		}
 		else{
 			$sql = "INSERT INTO `customer`(  `Name`, `Email`, `PhoneNo`, `Address`, `Password`) 
-			VALUES ('$name','$email','$phoneNO','$address', '$password')";
+			VALUES ('$name','$email','$phoneNO','$address', '$Password')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));
 				

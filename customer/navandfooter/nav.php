@@ -111,7 +111,7 @@
         <span id="emailfield" style="color:red;display:none">Fields are required</span>
 
         <label for="Phone">Phone:</label>
-        <input type="text" class="form-control" id="phoneNO" placeholder="Phone" name="phoneNO" >
+        <input type="text" class="form-control" id="phoneNO" placeholder="Phone" name="phoneNO">
         <span id="phonLen" style="color:red;display:none">The Phone Number field needs to be at least 10
           characters</span>
         <span id="phonefield" style="color:red;display:none">Fields are required</span>
@@ -205,7 +205,7 @@
                                 var dataResult = JSON.parse(dataResult);
                                 if (dataResult.statusCode == 200) {
                                   alert('Registration Successful');
-                                  window.location = "../index.php";
+                                  window.location = "../database/registerAfterlogin.php";
                                 } else if (dataResult.statusCode == 201) {
                                   exists.style.display = "block";
                                   passwordLen.style.display = "none";
