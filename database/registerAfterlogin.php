@@ -25,7 +25,6 @@ if (mysqli_num_rows($result) > 0) {
         $_SESSION['PhoneNo'] = $PhoneNo;
         $_SESSION['Address'] = $Address;
         $_SESSION['userEmail-foodtiger'] = $Email;
-        // echo "<script>window.location.assign('../index.php');</script>";
         echo "<script>window.history.back();</script>";
     }
 }
